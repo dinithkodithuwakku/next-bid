@@ -1,0 +1,68 @@
+{
+  "user_login_form": {
+    "user_name": {
+      "min": 0,
+      "max": 100,
+      "regex": ""
+    },
+    "password": {
+      "min": 0,
+      "max": 100,
+      "regex": ""
+    }
+  },
+  "user_registration_form": {
+    "first_name": {
+      "min": 0,
+      "max": 100,
+      "regex": "",
+      "input_type": "string"
+    },
+    "last_name": {
+      "min": 0,
+      "max": 100,
+      "regex": "",
+      "input_type": "string"
+    },
+    "dob": {
+      "regex": "",
+      "input_type": "date"
+    },
+    "address": {
+      "min": 0,
+      "max": 500,
+      "regex": "",
+      "input_type": "string"
+    },
+    "city": {
+      "min": 0,
+      "max": 100,
+      "regex": "",
+      "input_type": "string"
+    },
+    "telephone": {
+      "length": 10,
+      "regex": "",
+      "input_type": "string"
+    },
+    "email": {
+      "min": 0,
+      "max": 100,
+      "regex": "",
+      "input_type": "string"
+    },
+    "password": {
+      "min": 0,
+      "max": 100,
+      "regex": "",
+      "input_type": "string"
+    }
+  },
+  "bid": {
+    "title": {
+      "min": 0,
+      "max": 100,
+      "regex": ""
+    }
+  }
+}
