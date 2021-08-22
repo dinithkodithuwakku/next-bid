@@ -1,0 +1,98 @@
+{
+  "menu_items": [
+    {
+      "title": "Home",
+      "url": "index.html",
+      "type": "menu-item",
+      "available": "all",
+      "auth": false
+    },
+    {
+      "title": "New Bid \uD83C\uDFC6",
+      "url": "seller-add-new-bid.html",
+      "type": "menu-item",
+      "available": "seller",
+      "auth": true
+    },
+    {
+      "title": "About Us",
+      "url": "#",
+      "type": "menu-item",
+      "available": "all",
+      "auth": false
+    },
+    {
+      "title": "Contact Us",
+      "url": "#",
+      "type": "menu-item",
+      "available": "all",
+      "auth": false
+    },
+    {
+      "title": "User Name",
+      "url": "#",
+      "type": "menu-item",
+      "auth": true,
+      "sub_menu": [
+        {
+          "title": "Profile",
+          "url": "user-profile.html",
+          "type": "sub-menu-item",
+          "available": "all",
+          "auth": false
+        },
+        {
+          "title": "Wallet",
+          "url": "user-wallet.html",
+          "type": "sub-menu-item",
+          "available": "customer",
+          "auth": true
+        },
+        {
+          "title": "My Bidding",
+          "url": "user-bidding-history.html",
+          "type": "sub-menu-item",
+          "available": "customer",
+          "auth": true
+        },
+        {
+          "title": "Ongoing Bids",
+          "url": "seller-ongoing-bids.html",
+          "type": "sub-menu-item",
+          "available": "seller",
+          "auth": true
+        },
+        {
+          "title": "Bids List",
+          "url": "seller-bids-history.html",
+          "type": "sub-menu-item",
+          "available": "seller",
+          "auth": true
+        },
+        {
+          "title": "Logout",
+          "url": "index.html",
+          "type": "sub-menu-item",
+          "callback": "logoutNRedirectToLogin()",
+          "available": "all",
+          "auth": true
+        }
+      ]
+    },
+    {
+      "title": "Switch to",
+      "url": "user-login.html",
+      "type": "button",
+      "callback": "switchToOtherAccount()",
+      "available": "all",
+      "auth": true
+    },
+    {
+      "title": "Login / Register",
+      "url": "user-register.html",
+      "type": "button",
+      "available": "all",
+      "auth": false
+    }
+  ]
+}
