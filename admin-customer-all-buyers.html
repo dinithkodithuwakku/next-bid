@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <title>N E X T Bid - Manage Categories</title>
+    <title>N E X T Bid - Customers List</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
     <link href="admin-assets/css/styles.css" rel="stylesheet"/>
 
@@ -83,47 +83,26 @@
         <main>
             <div class="container-fluid px-4">
 
-                <h4 class="mt-4">Manage Categories</h4>
+                <h4 class="mt-4">View All Buyers</h4>
                 <hr>
 
-                <h5 class="mt-4">Add New Category</h5>
-                <form class="row needs-validation" novalidate id="category_create_form">
-                    <div class="form-group row mb-3">
-                        <label class="form-label col-lg-4 col-md-6 col-sm-12" for="categoryNameInput">
-                            Category Name
-                        </label>
-                        <div class="col-lg col-md col-sm-12">
-                            <input class="form-control border-1 bg-light" id="categoryNameInput" maxlength="100"
-                                   minlength="2" required type="text" name="category_name">
-                            <div class="invalid-feedback">
-                                Please input valid category name!
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 col-lg-6 col-sm-12 offset-lg-4 offset-md-0 offset-sm-0 ">
-                            <button class="btn btn-dark border-0 me-3 px-5" style="width: fit-content;"
-                                    type="submit">Save
-                            </button>
-                            <button class="btn btn-light px-5" style="width: fit-content;" type="reset">Clear
-                            </button>
-                        </div>
-                    </div>
-                </form>
-
-                <h5 class="mt-4">Categories List</h5>
-                <table class="table table-hover table-responsive-md table-responsive-sm" id="categoryListTable">
+                <table class="table table-hover table-responsive-md table-responsive-sm" id="customerListTable">
                     <thead>
                     <tr>
-                        <th scope="col">Category ID</th>
-                        <th scope="col">Category Name</th>
+                        <th scope="col">Customer ID</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telephone</th>
+                        <th scope="col">User type</th>
+                        <th scope="col">Action</th>
                     </tr>
                     </thead>
                     <tbody>
 
                     </tbody>
                 </table>
+
             </div>
         </main>
         <footer class="py-4 bg-light mt-auto">
@@ -150,19 +129,20 @@
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"></script>
 <script src="admin-assets/js/datatables-simple-demo.js"></script>
-
+<script src="js/moment.min.js"></script>
 <script src="js/controller/base_controller.js"></script>
 <script src="js/controller/admin-auth-controller.js"></script>
 <script src="js/controller/admin-left-navigation-controller.js"></script>
-<script src="js/controller/admin-category-controller.js"></script>
+<script src="js/controller/admin-customer-list-controller.js"></script>
 
 <script>
     $(document).ready(function () {
-        const datatablesSimple = document.getElementById('categoryListTable');
+        const datatablesSimple = document.getElementById('customerListTable');
         if (datatablesSimple) {
             new simpleDatatables.DataTable(datatablesSimple);
         }
     });
 </script>
+
 </body>
 </html>
