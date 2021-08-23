@@ -1,5 +1,7 @@
 function showMenu(status) {
     console.log(`currently showing menu: ${status}`);
+
+    $('#menuItemSwitchUserType').parent().hide();
     if (status === "customer") {
         console.log(`running the customer status`);
         $('#menuItemHome').parent().show();
@@ -7,9 +9,8 @@ function showMenu(status) {
         $('#menuItemProfile').parent().show();
         $('#menuItemWallet').parent().show();
         $('#menuItemCustomerBiddingList').parent().show();
-        $('#menuItemSwitchUserType').parent().show();
-        $('#menuItemSwitchUserType').html('Switch to  Selling');
-        console.log($('#menuItemSwitchUserType').parent());
+        // $('#menuItemSwitchUserType').parent().show();
+        // $('#menuItemSwitchUserType').html('Switch to  Selling');
         $('#menuItemNewBid').parent().hide();
         $('#menuItemSellerOngoingBids').parent().hide();
         $('#menuItemSellerBidsHistory').parent().hide();
@@ -18,7 +19,7 @@ function showMenu(status) {
         $('#menuItemHome').parent().show();
         $('#menuItemLogout').parent().show();
         $('#menuItemProfile').parent().show();
-        $('#menuItemSwitchUserType').parent().remove();
+        // $('#menuItemSwitchUserType').parent().remove();
         // $('#menuItemSwitchUserType').html('Switch to Buying');
         $('#menuItemWallet').parent().hide();
         $('#menuItemCustomerBiddingList').parent().hide();
@@ -35,7 +36,6 @@ function showMenu(status) {
         $('#menuItemCustomerBiddingList').parent().hide();
         $('#menuItemSellerOngoingBids').parent().hide();
         $('#menuItemSellerBidsHistory').parent().hide();
-        $('#menuItemSwitchUserType').parent().hide();
         // $('#menuItemSwitchUserType').html('Switch to  Selling');
     }
 }
@@ -59,7 +59,8 @@ function checkLogins() {
 
     if (localStorage.hasOwnProperty('nextbid_user_obj')) {
         let loginCredentials = JSON.parse(localStorage.getItem("nextbid_user_obj"));
-        if (loginCredentials.username !== undefined && loginCredentials.UserType !== undefined) {
+        console.log(loginCredentials)
+        if (loginCredentials.Email !== undefined && loginCredentials.UserType !== undefined) {
             if (loginCredentials.UserType === 3) {
                 showMenu("customer");
                 return;

@@ -3,12 +3,13 @@ const tableBody = $('#customerListTable tbody');
 function _createCustomerTableRow(customer) {
     return `
         <tr>
-            <th class="fw-normal" scope="row">${customer.Id}</th>
+            <!--<th class="fw-normal" scope="row">${customer.Id}</th>-->
             <td class="fw-bold">${customer.FirstName} ${customer.LastName} </td>
             <td>${customer.Address}</td>
             <td><a class="badge bg-dark text-decoration-none">${customer.Email}</a></td>
             <td><a class="badge bg-dark text-decoration-none">${customer.ContactNumber}</a></td>
             <td><a class="badge bg-dark text-decoration-none">${customer.UserType === 2 ? "Seller" : "Buyer"}</a></td>
+            <td><a class="badge bg-dark text-decoration-none">${customer.IsBlacklisted}</a></td>"
             ${customer.IsApproved === 0 ? "<td><a class=\"badge bg-info text-decoration-none\">Pending</a></td>" : customer.IsApproved === 9 ?
         "<td><a class=\"badge bg-danger text-decoration-none\">Rejected</a></td>" : "<td><a class=\"badge bg-primary text-decoration-none\">Approved</a></td>"}
             
@@ -47,7 +48,7 @@ function onClickBanUser(customer) {
                 icon: "success",
                 title: "User baned!",
             });
-            window.location.href = baseUrl + 'admin-customer-list.html';
+            _loadAllCustomers();
         },
         error: function (response) {
             console.log(response);
@@ -78,7 +79,7 @@ function _loadAllCustomers() {
                 console.log("customer : ", customer);
                 tableBody.append(_createCustomerTableRow(customer));
 
-                if (customer.IsApproved === 1) {
+                if (customer.IsApproved === 1 && !customer.IsBlacklisted) {
                     let banUserButton = document.createElement('button');
                     banUserButton.className = "btn btn-sm btn-danger border-0";
                     banUserButton.innerHTML = "<span class=\"fa fa-ban\"></span>";

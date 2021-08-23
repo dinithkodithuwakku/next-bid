@@ -1,14 +1,18 @@
-const tableBody = $('#customerListTable tbody');
+const tableBody = $('#customerAllBlacklistedUsersTable tbody');
 
 function _createCustomerTableRow(customer) {
     return `
         <tr>
-            <th class="fw-normal" scope="row">${customer.Id}</th>
+            <!--<th class="fw-normal" scope="row">${customer.Id}</th>-->
             <td class="fw-bold">${customer.FirstName} ${customer.LastName} </td>
             <td>${customer.Address}</td>
             <td><a class="badge bg-dark text-decoration-none">${customer.Email}</a></td>
             <td><a class="badge bg-dark text-decoration-none">${customer.ContactNumber}</a></td>
             <td><a class="badge bg-dark text-decoration-none">${customer.UserType === 2 ? "Seller" : "Buyer"}</a></td>
+            <td><a class="badge bg-dark text-decoration-none">${customer.IsBlacklisted}</a></td>"
+            ${customer.IsApproved === 0 ? "<td><a class=\"badge bg-info text-decoration-none\">Pending</a></td>" : customer.IsApproved === 9 ?
+        "<td><a class=\"badge bg-danger text-decoration-none\">Rejected</a></td>" : "<td><a class=\"badge bg-primary text-decoration-none\">Approved</a></td>"}
+            
             <td>
                 <!--<a class="btn btn-sm btn-dark border-0 me-1" href="admin-customer-view.html"-->
                    <!--title="View Details">-->
@@ -20,17 +24,14 @@ function _createCustomerTableRow(customer) {
     `;
 }
 
-function onClickBanUser(customer) {
+function onClickRemove(customer) {
     let userObj = {
         UserId: customer.Id,
-        Email: customer.Email,
-        BlacklistDate: moment().format('YYYY-MM-DD HH:mm:ss'),
-        Reason: "By admin"
     };
 
     $.ajax({
         type: "POST",
-        url: "https://localhost:44395/api/User/SaveBlackListUser",
+        url: "https://localhost:44395/api/User/RemoveBlackListUser",
         data: userObj,
         async: true,
         beforeSend: function () {
@@ -42,9 +43,9 @@ function onClickBanUser(customer) {
         success: function (response) {
             Toast.fire({
                 icon: "success",
-                title: "User baned!",
+                title: "User removed!",
             });
-            window.location.href = baseUrl + 'admin-customer-list.html';
+            _loadAllCustomers();
         },
         error: function (response) {
             console.log(response);
@@ -60,7 +61,7 @@ function onClickBanUser(customer) {
 function _loadAllCustomers() {
     $.ajax({
         type: 'GET',
-        url: "https://localhost:44395/api/User/GetUsersList",
+        url: "https://localhost:44395/api/User/GetBlackListedUsers",
         async: true,
         beforeSend: function () {
             // show loading
@@ -75,14 +76,14 @@ function _loadAllCustomers() {
                 console.log("customer : ", customer);
                 tableBody.append(_createCustomerTableRow(customer));
 
-                let banUserButton = document.createElement('button');
-                banUserButton.className = "btn btn-sm btn-danger border-0";
-                banUserButton.innerHTML = "<span class=\"fa fa-ban\"></span>";
-                banUserButton.addEventListener('click', function () {
-                    onClickBanUser(customer)
+                let removeButton = document.createElement('button');
+                removeButton.className = "btn btn-sm btn-danger border-0";
+                removeButton.innerHTML = "<span class=\"fa fa-ban\"></span>";
+                removeButton.addEventListener('click', function () {
+                    onClickRemove(customer)
                 });
 
-                document.getElementById(customer.Id).appendChild(banUserButton);
+                document.getElementById(customer.Id).appendChild(removeButton);
             }
 
         },

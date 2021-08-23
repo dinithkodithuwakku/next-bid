@@ -23,7 +23,6 @@ function loginUser() {
     if (userName === "admin@gmail.com" && password === "admin") {
         localStorage.setItem("nextbid_login", JSON.stringify({
             "username": userName,
-            "password": password,
             "userType": "admin",
         }));
         window.location.href = baseUrl + 'admin-dashboard.html';
@@ -58,7 +57,7 @@ function loginUser() {
                 }
                 console.log(response)
                 localStorage.setItem("nextbid_userId", response.Id);
-                localStorage.setItem("nextbid_user_obj", response);
+                localStorage.setItem("nextbid_user_obj", JSON.stringify(response));
                 redirectToNextPage(xhr.status);
             },
             error: function (response) {
