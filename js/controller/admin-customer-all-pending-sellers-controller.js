@@ -1,4 +1,4 @@
-const tableBody = $('#customerAllPendingBuyersTable tbody');
+const tableBody = $('#customerAllPendingSellersTable tbody');
 
 function _createCustomerTableRow(customer) {
     return `
@@ -91,7 +91,7 @@ function onClickRejectBuyer(customer) {
 function _loadAllCustomers() {
     $.ajax({
         type: 'GET',
-        url: "https://localhost:44395/api/User/GetUsersList/Buyers/Pending",
+        url: "https://localhost:44395/api/User/GetUsersList/Sellers/Pending",
         async: true,
         beforeSend: function () {
             // show loading
@@ -106,24 +106,24 @@ function _loadAllCustomers() {
                 console.log("customer : ", customer);
                 tableBody.append(_createCustomerTableRow(customer));
 
-                let approveBuyer = document.createElement('button');
-                approveBuyer.className = "btn btn-sm btn-primary border-0";
-                approveBuyer.innerHTML = "<span class=\"fa fa-check\"></span>";
-                approveBuyer.addEventListener('click', function () {
+                let approveUser = document.createElement('button');
+                approveUser.className = "btn btn-sm btn-primary border-0";
+                approveUser.innerHTML = "<span class=\"fa fa-check\"></span>";
+                approveUser.addEventListener('click', function () {
                     onClickApproveBuyer(customer)
                 });
 
-                document.getElementById(customer.Id).appendChild(approveBuyer);
+                document.getElementById(customer.Id).appendChild(approveUser);
 
-                let rejectBuyer = document.createElement('button');
-                rejectBuyer.className = "btn btn-sm btn-danger border-0";
-                rejectBuyer.style.marginLeft = "10px";
-                rejectBuyer.innerHTML = "<span class=\"fa fa-ban\"></span>";
-                rejectBuyer.addEventListener('click', function () {
+                let rejectUser = document.createElement('button');
+                rejectUser.className = "btn btn-sm btn-danger border-0";
+                rejectUser.style.marginLeft = "10px";
+                rejectUser.innerHTML = "<span class=\"fa fa-ban\"></span>";
+                rejectUser.addEventListener('click', function () {
                     onClickRejectBuyer(customer)
                 });
 
-                document.getElementById(customer.Id).appendChild(rejectBuyer);
+                document.getElementById(customer.Id).appendChild(rejectUser);
             }
 
         },

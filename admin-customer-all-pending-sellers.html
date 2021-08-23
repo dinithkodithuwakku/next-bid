@@ -59,7 +59,8 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
                         View All
                     </a>
-                    <a class="nav-link" href="admin-customer-all-pending-buyers.html" id="menuItemCustomerAllPendingBuyers">
+                    <a class="nav-link" href="admin-customer-all-pending-buyers.html"
+                       id="menuItemCustomerAllPendingBuyers">
                         <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
                         View Pending buyers
                     </a>
@@ -68,7 +69,8 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
                         View Pending sellers
                     </a>
-                    <a class="nav-link" href="admin-customer-all-blacklisted-users.html" id="menuItemCustomerAllBlacklistedUsers">
+                    <a class="nav-link" href="admin-customer-all-blacklisted-users.html"
+                       id="menuItemCustomerAllBlacklistedUsers">
                         <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
                         View Blacklisted users
                     </a>
@@ -88,10 +90,11 @@
         <main>
             <div class="container-fluid px-4">
 
-                <h4 class="mt-4">View All Customers</h4>
+                <h4 class="mt-4">View All pending sellers</h4>
                 <hr>
 
-                <table class="table table-hover table-responsive-md table-responsive-sm" id="customerListTable">
+                <table class="table table-hover table-responsive-md table-responsive-sm"
+                       id="customerAllPendingSellersTable">
                     <thead>
                     <tr>
                         <th scope="col">Customer ID</th>
@@ -100,7 +103,6 @@
                         <th scope="col">Email</th>
                         <th scope="col">Telephone</th>
                         <th scope="col">User type</th>
-                        <th scope="col">Approval</th>
                         <th scope="col">Action</th>
                     </tr>
                     </thead>
@@ -139,7 +141,7 @@
 <script src="js/controller/base_controller.js"></script>
 <script src="js/controller/admin-auth-controller.js"></script>
 <script src="js/controller/admin-left-navigation-controller.js"></script>
-<script src="js/controller/admin-customer-list-controller.js"></script>
+<script src="js/controller/admin-customer-all-pending-sellers-controller.js"></script>
 
 <script>
     $(document).ready(function () {
