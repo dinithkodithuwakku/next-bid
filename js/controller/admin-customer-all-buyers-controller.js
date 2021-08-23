@@ -9,9 +9,6 @@ function _createCustomerTableRow(customer) {
             <td><a class="badge bg-dark text-decoration-none">${customer.Email}</a></td>
             <td><a class="badge bg-dark text-decoration-none">${customer.ContactNumber}</a></td>
             <td><a class="badge bg-dark text-decoration-none">${customer.UserType === 2 ? "Seller" : "Buyer"}</a></td>
-            ${customer.IsApproved === 0 ? "<td><a class=\"badge bg-info text-decoration-none\">Pending</a></td>" : customer.IsApproved === 9 ?
-        "<td><a class=\"badge bg-danger text-decoration-none\">Rejected</a></td>" : "<td><a class=\"badge bg-primary text-decoration-none\">Approved</a></td>"}
-            
             <td>
                 <!--<a class="btn btn-sm btn-dark border-0 me-1" href="admin-customer-view.html"-->
                    <!--title="View Details">-->
@@ -78,17 +75,14 @@ function _loadAllCustomers() {
                 console.log("customer : ", customer);
                 tableBody.append(_createCustomerTableRow(customer));
 
-                if (customer.IsApproved === 1) {
-                    let banUserButton = document.createElement('button');
-                    banUserButton.className = "btn btn-sm btn-danger border-0";
-                    banUserButton.innerHTML = "<span class=\"fa fa-ban\"></span>";
-                    banUserButton.addEventListener('click', function () {
-                        onClickBanUser(customer)
-                    });
+                let banUserButton = document.createElement('button');
+                banUserButton.className = "btn btn-sm btn-danger border-0";
+                banUserButton.innerHTML = "<span class=\"fa fa-ban\"></span>";
+                banUserButton.addEventListener('click', function () {
+                    onClickBanUser(customer)
+                });
 
-                    document.getElementById(customer.Id).appendChild(banUserButton);
-                }
-
+                document.getElementById(customer.Id).appendChild(banUserButton);
             }
 
         },

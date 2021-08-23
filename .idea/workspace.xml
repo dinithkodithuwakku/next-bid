@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d08bab06-587a-4ecd-bcb6-2d8abe49b1c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin-customer-all-blacklisted-users.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-customer-all-buyers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-customer-all-pending-buyers.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin-customer-all-sellers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-bid-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-bid-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-bid-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-bid-create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-bid-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-bid-view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-category-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-category-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-customer-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-customer-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-customer-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-customer-view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-dashboard.html" afterDir="false" />
-    </list>
+    <list default="true" id="d08bab06-587a-4ecd-bcb6-2d8abe49b1c0" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,30 +23,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="53" />
-          <entry key="js" value="45" />
+          <entry key="html" value="58" />
+          <entry key="js" value="51" />
           <entry key="rnc" value="1" />
           <entry key="ts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="53" />
-          <entry key="JavaScript" value="45" />
+          <entry key="HTML" value="58" />
+          <entry key="JavaScript" value="51" />
           <entry key="RNG Compact" value="1" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="888" />
-          <entry key="js" value="2914" />
+          <entry key="html" value="1004" />
+          <entry key="js" value="3121" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="905" />
-          <entry key="JavaScript" value="2897" />
+          <entry key="HTML" value="1023" />
+          <entry key="JavaScript" value="3102" />
         </counts>
       </usages-collector>
     </session>
@@ -66,91 +54,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin-customer-list.html">
+        <entry file="file://$PROJECT_DIR$/admin-customer-all-pending-buyers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+            <state relative-caret-position="-187">
+              <caret line="91" column="56" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin-customer-view.html">
+        <entry file="file://$PROJECT_DIR$/js/controller/admin-customer-all-pending-buyers-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+            <state relative-caret-position="272">
+              <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin-dashboard.html">
+        <entry file="file://$PROJECT_DIR$/js/controller/admin-customer-list-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="71" column="24" lean-forward="true" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+            <state relative-caret-position="224">
+              <caret line="77" column="53" lean-forward="true" selection-start-line="77" selection-start-column="53" selection-end-line="77" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin-customer-all-pending-buyers.html">
+        <entry file="file://$PROJECT_DIR$/admin-customer-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin-customer-all-blacklisted-users.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin-customer-all-buyers.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin-customer-all-sellers.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin-bid-create.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin-bid-view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin-category-all.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+            <state relative-caret-position="221">
+              <caret line="99" column="25" lean-forward="true" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -186,7 +120,6 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/user-bid-detail.html" />
         <option value="$PROJECT_DIR$/js/controller/admin-category-controller.js" />
-        <option value="$PROJECT_DIR$/js/controller/admin-customer-list-controller.js" />
         <option value="$PROJECT_DIR$/js/controller/user-login-controller.js" />
         <option value="$PROJECT_DIR$/js/controller/home-page-controller.js" />
         <option value="$PROJECT_DIR$/js/controller/user-bid-detail-controller.js" />
@@ -200,13 +133,15 @@
         <option value="$PROJECT_DIR$/admin-bid-create.html" />
         <option value="$PROJECT_DIR$/admin-bid-view.html" />
         <option value="$PROJECT_DIR$/admin-category-all.html" />
+        <option value="$PROJECT_DIR$/admin-customer-view.html" />
+        <option value="$PROJECT_DIR$/admin-dashboard.html" />
         <option value="$PROJECT_DIR$/admin-customer-all-blacklisted-users.html" />
         <option value="$PROJECT_DIR$/admin-customer-all-buyers.html" />
         <option value="$PROJECT_DIR$/admin-customer-all-pending-buyers.html" />
         <option value="$PROJECT_DIR$/admin-customer-all-sellers.html" />
+        <option value="$PROJECT_DIR$/js/controller/admin-customer-all-pending-buyers-controller.js" />
         <option value="$PROJECT_DIR$/admin-customer-list.html" />
-        <option value="$PROJECT_DIR$/admin-customer-view.html" />
-        <option value="$PROJECT_DIR$/admin-dashboard.html" />
+        <option value="$PROJECT_DIR$/js/controller/admin-customer-list-controller.js" />
       </list>
     </option>
   </component>
@@ -239,6 +174,17 @@
               <item name="next-bid" type="b2602c69:ProjectViewProjectNode" />
               <item name="next-bid" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="next-bid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="next-bid" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="next-bid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="next-bid" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -249,13 +195,14 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1629697112583" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1629702730851" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="O:\esoft\courseworks\Advanced software engineering\next-bid\js\controller" />
       <recent name="O:\esoft\courseworks\Advanced software engineering\next-bid" />
     </key>
   </component>
@@ -295,12 +242,12 @@
       <workItem from="1629550022299" duration="15479000" />
       <workItem from="1629610142298" duration="13127000" />
       <workItem from="1629625757547" duration="3203000" />
-      <workItem from="1629694001367" duration="2846000" />
+      <workItem from="1629694001367" duration="6292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46266000" />
+    <option name="totallyTimeSpent" value="49712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -409,13 +356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
           <caret line="31" column="7" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/admin-customer-list-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -543,38 +483,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin-customer-all-blacklisted-users.html">
+    <entry file="file://$PROJECT_DIR$/admin-dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin-customer-all-buyers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin-customer-all-pending-buyers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin-customer-all-sellers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin-customer-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+        <state relative-caret-position="153">
+          <caret line="175" column="49" selection-start-line="175" selection-start-column="49" selection-end-line="175" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -585,10 +497,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin-dashboard.html">
+    <entry file="file://$PROJECT_DIR$/js/controller/admin-customer-all-blacklisted-users-controller.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/admin-customer-all-buyers-controller.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/admin-customer-all-sellers-controller.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin-customer-all-buyers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="71" column="24" lean-forward="true" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
+        <state relative-caret-position="-2">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin-customer-all-sellers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin-customer-all-blacklisted-users.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin-customer-all-pending-buyers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="91" column="56" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/admin-customer-all-pending-buyers-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin-customer-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="99" column="25" lean-forward="true" selection-start-line="99" selection-start-column="25" selection-end-line="99" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/admin-customer-list-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="77" column="53" lean-forward="true" selection-start-line="77" selection-start-column="53" selection-end-line="77" selection-end-column="53" />
         </state>
       </provider>
     </entry>
