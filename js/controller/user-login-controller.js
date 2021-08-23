@@ -1,4 +1,4 @@
-function redirectToNextPage() {
+function redirectToNextPage(status) {
     console.log('asdasd')
     let userName = $('form#loginForm input[name=username]').val();
     let password = $('form#loginForm input[name=password]').val();
@@ -6,13 +6,14 @@ function redirectToNextPage() {
 
     localStorage.setItem("nextbid_login", JSON.stringify({
         "username": userName,
-        "password": password,
         "userType": "customer",
         "remember_me": remember_me,
     }));
 
-    if (localStorage.hasOwnProperty("nextbid_login") && userName !== undefined && password !== undefined) {
+    if (localStorage.hasOwnProperty("nextbid_login") && userName !== undefined && password !== undefined && status === 200) {
         window.location.href = baseUrl + 'index.html';
+    } else if (localStorage.hasOwnProperty("nextbid_login") && userName !== undefined && password !== undefined && status === 202) {
+        window.location.href = baseUrl + 'user-registration-payment.html';
     }
 }
 
@@ -43,15 +44,22 @@ function loginUser() {
                 // hide loading
 
             },
-            success: function (response) {
-                // console.log(response);
-                Toast.fire({
-                    icon: "success",
-                    title: "Redirecting...!",
-                });
-                localStorage.setItem("nextbid_userId", response);
-                redirectToNextPage();
-
+            success: function (response, textStatus, xhr) {
+                if (xhr.status === 200) {
+                    Toast.fire({
+                        icon: "success",
+                        title: "Redirecting...!",
+                    });
+                } else {
+                    Toast.fire({
+                        icon: "info",
+                        title: "Settle Registration fee...!",
+                    });
+                }
+                console.log(response)
+                localStorage.setItem("nextbid_userId", response.Id);
+                localStorage.setItem("nextbid_user_obj", response);
+                redirectToNextPage(xhr.status);
             },
             error: function (response) {
 
@@ -66,6 +74,13 @@ function loginUser() {
                     Toast.fire({
                         icon: "error",
                         title: "Blacklisted!",
+                    });
+                }
+
+                if (response.status === 503) {
+                    Toast.fire({
+                        icon: "error",
+                        title: "Your account is not approved!",
                     });
                 }
 

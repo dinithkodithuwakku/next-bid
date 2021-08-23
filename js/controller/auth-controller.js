@@ -42,15 +42,30 @@ function showMenu(status) {
 
 // check saved user logins
 function checkLogins() {
-    if (localStorage.hasOwnProperty('nextbid_login')) {
-        let loginCredentials = JSON.parse(localStorage.getItem("nextbid_login"));
-        if (loginCredentials.username !== undefined && loginCredentials.password !== undefined && loginCredentials.userType !== undefined) {
-            if (loginCredentials.userType === "customer") {
+    // if (localStorage.hasOwnProperty('nextbid_login')) {
+    //     let loginCredentials = JSON.parse(localStorage.getItem("nextbid_login"));
+    //     if (loginCredentials.username !== undefined && loginCredentials.password !== undefined && loginCredentials.userType !== undefined) {
+    //         if (loginCredentials.userType === "customer") {
+    //             showMenu("customer");
+    //             return;
+    //         }
+    //
+    //         if (loginCredentials.userType === "seller") {
+    //             showMenu("seller");
+    //             return;
+    //         }
+    //     }
+    // }
+
+    if (localStorage.hasOwnProperty('nextbid_user_obj')) {
+        let loginCredentials = JSON.parse(localStorage.getItem("nextbid_user_obj"));
+        if (loginCredentials.username !== undefined && loginCredentials.UserType !== undefined) {
+            if (loginCredentials.UserType === 3) {
                 showMenu("customer");
                 return;
             }
 
-            if (loginCredentials.userType === "seller") {
+            if (loginCredentials.UserType === 2) {
                 showMenu("seller");
                 return;
             }

@@ -39,9 +39,9 @@ function onClickApproveBuyer(customer) {
         success: function (response) {
             Toast.fire({
                 icon: "success",
-                title: "Buyer approved!",
+                title: "Seller approved!",
             });
-            window.location.href = baseUrl + 'admin-customer-all-pending-buyers.html';
+            window.location.href = baseUrl + 'admin-customer-all-pending-sellers.html';
         },
         error: function (response) {
             console.log(response);
@@ -73,9 +73,9 @@ function onClickRejectBuyer(customer) {
         success: function (response) {
             Toast.fire({
                 icon: "success",
-                title: "Buyer Rejected!",
+                title: "Seller Rejected!",
             });
-            window.location.href = baseUrl + 'admin-customer-all-pending-buyers.html';
+            window.location.href = baseUrl + 'admin-customer-all-pending-sellers.html';
         },
         error: function (response) {
             console.log(response);
