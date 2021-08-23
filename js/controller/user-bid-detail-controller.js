@@ -75,45 +75,52 @@ function onClickPlaceBid(event) {
     event.stopPropagation();
     if (document.querySelector('#placeBidForm').checkValidity()) {
         let bidObj = JSON.parse(localStorage.getItem("nextbid_bid_obj"));
+        if(parseFloat($('input[name=bidValue]').val()) > bidObj.itemBidding.StartingBid) {
 
-        let obj = {
-            ItemId: bidObj.Item.ItemId,
-            UserId: parseInt(localStorage.getItem("nextbid_userId")),
-            InspectionDate: $('input[name=bidInspectionStartsDate]').val(),
-            BidValue: parseFloat($('input[name=bidValue]').val())
-        };
+            let obj = {
+                ItemId: bidObj.Item.ItemId,
+                UserId: parseInt(localStorage.getItem("nextbid_userId")),
+                InspectionDate: $('input[name=bidInspectionStartsDate]').val(),
+                BidValue: parseFloat($('input[name=bidValue]').val())
+            };
 
-        $.ajax({
-            type: 'POST',
-            url: "https://localhost:44395/api/User/SaveUserBid",
-            data: obj,
-            async: true,
-            beforeSend: function () {
-                // show loading
-                $(`#placeBid`).prop("disabled", true);
-            },
-            complete: function () {
-                // hide loading
-                $(`#placeBid`).prop("disabled", false);
-            },
-            success: function (response) {
-                // handle success
+            $.ajax({
+                type: 'POST',
+                url: "https://localhost:44395/api/User/SaveUserBid",
+                data: obj,
+                async: true,
+                beforeSend: function () {
+                    // show loading
+                    $(`#placeBid`).prop("disabled", true);
+                },
+                complete: function () {
+                    // hide loading
+                    $(`#placeBid`).prop("disabled", false);
+                },
+                success: function (response) {
+                    // handle success
 
-                Toast.fire({
-                    icon: 'success',
-                    title: 'Bid successfully placed!'
-                });
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Bid successfully placed!'
+                    });
 
-                window.location.href = baseUrl + 'user-bid-detail.html';
-            },
-            error: function (response) {
-                // handle error
-                Toast.fire({
-                    icon: 'error',
-                    title: 'Request failed! cannot preform this action!'
-                })
-            }
-        });
+                    window.location.href = baseUrl + 'user-bid-detail.html';
+                },
+                error: function (response) {
+                    // handle error
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Request failed! cannot preform this action!'
+                    })
+                }
+            });
+        }else{
+            Toast.fire({
+                icon: 'error',
+                title: 'Bid value should grater than starting bid!'
+            })
+        }
     } else {
         Toast.fire({
             icon: 'error',

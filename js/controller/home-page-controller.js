@@ -46,7 +46,7 @@ function createAndAppendBidsList(obj) {
     placeBidButton.className = "btn btn-primary fw-bold w-100 py-3 border-0";
     placeBidButton.style.borderRadius = "10px";
     placeBidButton.innerHTML = "Place Bid";
-    placeBidButton.addEventListener('click', function(){
+    placeBidButton.addEventListener('click', function () {
         onclickPlaceBid(obj)
     });
 
@@ -68,7 +68,6 @@ function _loadTrendingBids() {
         },
         success: function (response) {
             // handle success
-
             bidRow.empty();
             for (let i = 0; i < response.Item.length; i++) {
                 let item = response.Item[i];
@@ -81,11 +80,7 @@ function _loadTrendingBids() {
             }
         },
         error: function (response) {
-            // handle error
-            Toast.fire({
-                icon: 'error',
-                title: 'Something went wrong! check your network connection'
-            })
+
         }
     });
 }
