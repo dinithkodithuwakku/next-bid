@@ -1,14 +1,16 @@
-function registerUser() {
+function registerUser(userType) {
     let UserOBJ = {
-        FirstName: $('input[name=first_name]').val(),
-        LastName: $('input[name=last_name]').val(),
-        Address: $('textarea[name=address]').val(),
-        ContactNumber: $('input[name=telephone]').val(),
-        City: $('input[name=city]').val(),
-        DOB: $('input[name=dob]').val(),
-        Email: $('input[name=email]').val(),
-        Password: $('input[name=password]').val(),
-    };
+            FirstName: $('input[name=first_name]').val(),
+            LastName: $('input[name=last_name]').val(),
+            Address: $('textarea[name=address]').val(),
+            ContactNumber: $('input[name=telephone]').val(),
+            City: $('input[name=city]').val(),
+            DOB: $('input[name=dob]').val(),
+            Email: $('input[name=email]').val(),
+            Password: $('input[name=password]').val(),
+            UserType: userType
+        }
+    ;
 
     $.ajax({
         type: "POST",
@@ -46,11 +48,11 @@ function registerUser() {
     });
 }
 
-$("#user_registration_form").on("submit", (e) => {
+$("#seller_registration_form").on("submit", (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (document.querySelector("#user_registration_form").checkValidity()) {
-        registerUser();
+    if (document.querySelector("#seller_registration_form").checkValidity()) {
+        registerUser(2);
     } else {
         Toast.fire({
             icon: "error",
@@ -59,10 +61,30 @@ $("#user_registration_form").on("submit", (e) => {
     }
 });
 
-$("#user_registration_form").on("reset", (e) => {
+$("#seller_registration_form").on("reset", (e) => {
     e.preventDefault();
     e.stopPropagation();
-    document.querySelector("#user_registration_form").reset();
+    document.querySelector("#seller_registration_form").reset();
+});
+
+
+$("#buyer_registration_form").on("submit", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (document.querySelector("#buyer_registration_form").checkValidity()) {
+        registerUser(3);
+    } else {
+        Toast.fire({
+            icon: "error",
+            title: "Invalid Data! Please check again.",
+        });
+    }
+});
+
+$("#buyer_registration_form").on("reset", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    document.querySelector("#buyer_registration_form").reset();
 });
 
 function ConfirmPassword(inputName) {

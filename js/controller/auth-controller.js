@@ -58,9 +58,9 @@ function checkLogins() {
     }
 
     if (window.location.href !== baseUrl + 'user-login.html') {
-        if (window.location.href === baseUrl + 'user-register.html') {
-            if (!(window.location.href === baseUrl + 'user-register.html')) {
-                window.location.href = baseUrl + 'user-register.html';
+        if (window.location.href === baseUrl + 'user-seller-register.html') {
+            if (!(window.location.href === baseUrl + 'user-seller-register.html')) {
+                window.location.href = baseUrl + 'user-seller-register.html';
             }
         } else {
             window.location.href = baseUrl + 'user-login.html';

@@ -17,7 +17,7 @@
 //         let userType = JSON.parse(localStorage.getItem("nextbid_login")).type;
 //         available = hasLogin && userType === liData.available || "all" === liData.available;
 //
-//         if (liData.url === "user-register.html") {
+//         if (liData.url === "user-seller-register.html") {
 //             available = false;
 //         }
 //
