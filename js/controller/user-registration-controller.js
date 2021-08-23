@@ -26,7 +26,7 @@ function registerUser(userType) {
         success: function (response) {
             Toast.fire({
                 icon: "success",
-                title: "User successfully registered!",
+                title: "User successfully registered! We will notify when verification complete!",
             });
             window.location.href = baseUrl + 'index.html';
         },
