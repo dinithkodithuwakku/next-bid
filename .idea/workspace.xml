@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d08bab06-587a-4ecd-bcb6-2d8abe49b1c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/controller/home-page-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/controller/home-page-controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/controller/user-bid-detail-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/controller/user-bid-detail-controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller-add-new-bid.html" beforeDir="false" afterPath="$PROJECT_DIR$/seller-add-new-bid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/user-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-registration-payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/user-registration-payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controller/user-wallet-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/controller/user-wallet-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-wallet.html" beforeDir="false" afterPath="$PROJECT_DIR$/user-wallet.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +29,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="91" />
-          <entry key="js" value="83" />
+          <entry key="html" value="94" />
+          <entry key="js" value="90" />
           <entry key="rnc" value="1" />
           <entry key="scss" value="1" />
           <entry key="ts" value="1" />
@@ -42,8 +38,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="91" />
-          <entry key="JavaScript" value="83" />
+          <entry key="HTML" value="94" />
+          <entry key="JavaScript" value="90" />
           <entry key="RNG Compact" value="1" />
           <entry key="SCSS" value="1" />
           <entry key="TypeScript" value="1" />
@@ -51,57 +47,70 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1574" />
-          <entry key="js" value="3737" />
+          <entry key="html" value="1807" />
+          <entry key="js" value="3998" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1598" />
-          <entry key="JavaScript" value="3713" />
+          <entry key="HTML" value="1831" />
+          <entry key="JavaScript" value="3974" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="215" column="42" lean-forward="true" selection-start-line="215" selection-start-column="42" selection-end-line="215" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/controller/home-page-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="48" column="44" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user-bid-detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="191" column="43" selection-start-line="191" selection-start-column="43" selection-end-line="191" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/controller/user-bid-detail-controller.js">
+        <entry file="file://$PROJECT_DIR$/user-wallet.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="121" column="71" selection-start-line="121" selection-start-column="71" selection-end-line="121" selection-end-column="71" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1076">
+              <caret line="105" column="68" selection-start-line="105" selection-start-column="68" selection-end-line="105" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controller/seller-new-bid-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="83" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controller/user-wallet-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="63" column="23" lean-forward="true" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user-registration-payment.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="226" column="34" selection-start-line="226" selection-start-column="34" selection-end-line="226" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controller/user-registration-payment-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="33" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controller/user-registration-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="63" selection-start-line="63" selection-end-line="67" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -123,6 +132,7 @@
       <find>console</find>
       <find>readFile</find>
       <find>bidTitleInputPreview</find>
+      <find>updateCardTitle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,9 +175,11 @@
         <option value="$PROJECT_DIR$/js/controller/admin-customer-list-controller.js" />
         <option value="$PROJECT_DIR$/user-login.html" />
         <option value="$PROJECT_DIR$/user-registration-payment.html" />
-        <option value="$PROJECT_DIR$/seller-add-new-bid.html" />
         <option value="$PROJECT_DIR$/js/controller/home-page-controller.js" />
         <option value="$PROJECT_DIR$/js/controller/user-bid-detail-controller.js" />
+        <option value="$PROJECT_DIR$/seller-add-new-bid.html" />
+        <option value="$PROJECT_DIR$/user-wallet.html" />
+        <option value="$PROJECT_DIR$/js/controller/user-wallet-controller.js" />
       </list>
     </option>
   </component>
@@ -202,6 +214,12 @@
               <item name="next-bid" type="b2602c69:ProjectViewProjectNode" />
               <item name="next-bid" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="next-bid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="next-bid" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -267,18 +285,18 @@
       <workItem from="1629708260848" duration="2627000" />
       <workItem from="1629719339195" duration="9070000" />
       <workItem from="1629733462370" duration="268000" />
-      <workItem from="1629782579135" duration="5083000" />
+      <workItem from="1629782579135" duration="9567000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68116000" />
+    <option name="totallyTimeSpent" value="72600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20604026" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20604026" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -293,7 +311,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2966443" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.2966443" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -362,20 +380,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user-profile.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/admin-category-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="31" column="7" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/seller-new-bid-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2193">
-          <caret line="129" column="23" selection-start-line="129" selection-start-column="23" selection-end-line="130" selection-end-column="24" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/buyer-registration-fee.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -496,20 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/user-registration-payment-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="77" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/user-registration-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/header-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -566,35 +556,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/user-login-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user-registration-payment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="102" column="44" lean-forward="true" selection-start-line="102" selection-start-column="44" selection-end-line="102" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user-login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="187" column="36" lean-forward="true" selection-start-line="187" selection-start-column="36" selection-end-line="187" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller-add-new-bid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="289" column="115" lean-forward="true" selection-start-line="289" selection-start-column="115" selection-end-line="289" selection-end-column="115" />
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -628,6 +593,72 @@
             <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/user-login-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="35" column="14" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="35" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/admin-category-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1139">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller-add-new-bid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="105" column="59" selection-start-line="105" selection-start-column="44" selection-end-line="105" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#h4#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-registration-payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="226" column="34" selection-start-line="226" selection-start-column="34" selection-end-line="226" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/user-registration-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="63" selection-start-line="63" selection-end-line="67" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/seller-new-bid-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="83" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/user-registration-payment-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="33" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/user-wallet-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="63" column="23" lean-forward="true" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user-wallet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1076">
+          <caret line="105" column="68" selection-start-line="105" selection-start-column="68" selection-end-line="105" selection-end-column="68" />
         </state>
       </provider>
     </entry>
