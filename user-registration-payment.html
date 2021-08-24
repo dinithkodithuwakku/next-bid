@@ -89,12 +89,12 @@
                                                     <div class="input-group">
                                                         <input type="number" placeholder="MM"
                                                                name="" class="form-control"
-                                                               required>
+                                                               required maxlength="2" minlength="2">
                                                         <input type="number"
                                                                placeholder="YY"
                                                                name=""
                                                                class="form-control"
-                                                               required>
+                                                               required maxlength="2" minlength="2">
                                                     </div>
                                                     <div class="invalid-feedback">
                                                         Please enter valid expiration date!.
@@ -107,7 +107,8 @@
                                                            title="Three digit CV code on the back of your card">
                                                         <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
                                                     </label>
-                                                    <input type="text" required class="form-control" placeholder="***">
+                                                    <input type="text" required class="form-control" placeholder="***"
+                                                           maxlength="3" minlength="3">
                                                     <div class="invalid-feedback">
                                                         Please enter valid CVV!.
                                                     </div>

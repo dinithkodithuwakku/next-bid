@@ -28,7 +28,7 @@ function _createBidDetailBase(bidObj) {
                 <p id="trailerDescription">${bidObj.Item.ItemDiscription}</p>
 
                 <div class="d-flex flex-column">
-                    <p class="mb-0">Ends In</p>
+                    <p class="mb-0">Ends On</p>
                     <h3 class="mb-0 fw-bold">${moment(new Date(bidObj.itemBidding.BidEndDate)).format(format)}</h3>
                 </div>
 
@@ -41,28 +41,28 @@ function _createBidDetailBase(bidObj) {
             <div class="card border-0 bg-light" style="margin-top: 10px">
                  <form class="row needs-validation" id="placeBidForm" novalidate>
                     <div class="card-body">
-                        <div class="row m-0 p-0 justify-content-center">
-                           <label class="form-label" for="bidInspectionStartsDateTime">
-                                Inspection date
-                            </label>
-                            <input class="form-control border-0 bg-white" id="bidInspectionStartsDateTime" required
-                                   name="bidInspectionStartsDate"
-                                   type="date">
-                            <div class="invalid-feedback">
-                                Please enter valid inspection in date!
-                            </div>
+                        <!--<div class="row m-0 p-0 justify-content-center">-->
+                           <!--<label class="form-label" for="bidInspectionStartsDateTime">-->
+                                <!--Inspection date-->
+                            <!--</label>-->
+                            <!--<input class="form-control border-0 bg-white" id="bidInspectionStartsDateTime" required-->
+                                   <!--name="bidInspectionStartsDate"-->
+                                   <!--type="date">-->
+                            <!--<div class="invalid-feedback">-->
+                                <!--Please enter valid inspection in date!-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="row m-0 p-3 justify-content-center" style="margin-top: 10px">
+                                <input class="form-control border-1 bg-white" type="number" required name="bidValue" value=${parseFloat(bidObj.itemBidding.HighestBid) + 5}>
                         </div>
-                        <div class="row m-0 p-0 justify-content-center" style="margin-top: 10px">
-                                <input class="form-control border-1 bg-white" type="number" required name="bidValue">
-                            <div class="col-auto">
+                        <div class="p-3 justify-content-end w-100 align-content-end" style="display: flex">
                                 <button class="btn btn-primary border-0" style="width: fit-content" type="submit" onclick="onClickPlaceBid(event)" id="placeBid"> 
-                                    Place Bid
+                                    Place Offer
                                 </button>
                                 <div class="invalid-feedback">
                                     Please enter bid value!
                                 </div>
                             </div>
-                        </div>
                     </div>
                </form>
             </div>
@@ -75,7 +75,7 @@ function onClickPlaceBid(event) {
     event.stopPropagation();
     if (document.querySelector('#placeBidForm').checkValidity()) {
         let bidObj = JSON.parse(localStorage.getItem("nextbid_bid_obj"));
-        if(parseFloat($('input[name=bidValue]').val()) > bidObj.itemBidding.StartingBid) {
+        if (parseFloat($('input[name=bidValue]').val()) > bidObj.itemBidding.StartingBid) {
 
             let obj = {
                 ItemId: bidObj.Item.ItemId,
@@ -109,13 +109,22 @@ function onClickPlaceBid(event) {
                 },
                 error: function (response) {
                     // handle error
-                    Toast.fire({
-                        icon: 'error',
-                        title: 'Request failed! cannot preform this action!'
-                    })
+                    if(response.status === 500) {
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'Request failed! cannot preform this action!'
+                        })
+                    }
+
+                    if(response.status === 402) {
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'Insufficient balance! Please top up your wallet!'
+                        })
+                    }
                 }
             });
-        }else{
+        } else {
             Toast.fire({
                 icon: 'error',
                 title: 'Bid value should grater than starting bid!'

@@ -97,9 +97,10 @@
             <div class="row">
                 <div class="col-md-6 col-lg-8 col-sm-12">
                     <form class="row needs-validation" id="createNewBidForm" novalidate>
+                        <h4 style="font-weight: bold; font-style: italic">Product details</h4>
                         <div class="col-md-12 mb-3">
                             <label class="form-label" for="bidTitleInput">
-                                Bid Title
+                                Product Title
                             </label>
                             <input class="form-control border-0 bg-light" id="bidTitleInput"
                                    onkeyup="updateCardTitle(this)"
@@ -107,25 +108,25 @@
                                    name="bidTitle"
                                    type="text">
                             <div class="invalid-feedback">
-                                Please enter valid bid title!
+                                Please enter valid Product title!
                             </div>
                         </div>
 
                         <div class="col-md-12 mb-3">
                             <label class="form-label" for="bidDescriptionInput">
-                                Bid Description
+                                Product Description
                             </label>
                             <textarea class="form-control border-0 bg-light" id="bidDescriptionInput"
                                       name="bidDescription"
                                       placeholder="Enter description" required rows="3" type="text"></textarea>
                             <div class="invalid-feedback">
-                                Please enter valid bid description!
+                                Please enter valid Product description!
                             </div>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="bidCategoryInput">
-                                Select bid category
+                                Select Product category
                             </label>
                             <select class="form-control border-0 bg-light" id="bidCategoryInput"
                                     required type="select">
@@ -139,7 +140,7 @@
 
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="location">
-                                Location
+                                Pick up Location
                             </label>
                             <input class="form-control border-0 bg-light" id="location"
                                    placeholder="Enter location here" required
@@ -151,56 +152,15 @@
                         </div>
 
                         <div class="col-md-6 mb-3">
-                            <label class="form-label" for="bidStartsDateTime">
-                                Starts In
+                            <label class="form-label" for="productValueInput">
+                                Set Product Value
                             </label>
-                            <input class="form-control border-0 bg-light" id="bidStartsDateTime" required
-                                   name="bidStartsDateTime"
-                                   type="date">
+                            <input class="form-control border-0 bg-light" id="productValueInput"
+                                   placeholder="Enter product value"
+                                   name="productValue"
+                                   required type="number">
                             <div class="invalid-feedback">
-                                Please enter valid starts in date time!
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label" for="bidEndsDate">
-                                Ends In
-                            </label>
-                            <div class="input-group col-lg col-md col-sm-12">
-                                <input class="form-control border-0 bg-light" id="bidEndsDate"
-                                       onchange="updateEndsIn(this)"
-                                       name="bidEndsDate"
-                                       required type="date">
-                                <div class="invalid-feedback">
-                                    Please enter valid ends in date time!
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label" for="bidStartsDateTime">
-                                Inspection Starts In
-                            </label>
-                            <input class="form-control border-0 bg-light" id="bidInspectionStartsDateTime" required
-                                   name="bidInspectionStartsDateTime"
-                                   type="date">
-                            <div class="invalid-feedback">
-                                Please enter valid inspection starts in date time!
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label" for="bidEndsDate">
-                                Inspection Ends In
-                            </label>
-                            <div class="input-group col-lg col-md col-sm-12">
-                                <input class="form-control border-0 bg-light" id="bidInspectionEndsDate"
-                                       onchange="updateEndsIn(this)"
-                                       name="bidInspectionEndsDate"
-                                       required type="date">
-                                <div class="invalid-feedback">
-                                    Please enter valid inspection ends in date time!
-                                </div>
+                                Please enter valid product value!
                             </div>
                         </div>
 
@@ -218,7 +178,7 @@
 
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="bidImageOneInput">
-                                Select Bid Image 1
+                                Select Product Image 1
                             </label>
                             <input accept="image/jpg" class="form-control border-0 bg-light" id="bidImageOneInput"
                                    type="file">
@@ -227,7 +187,7 @@
 
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="bidImageTwoInput">
-                                Select Bid Image 2
+                                Select Product Image 2
                             </label>
                             <input accept="image/jpg" class="form-control border-0 bg-light" id="bidImageTwoInput"
                                    type="file">
@@ -236,31 +196,25 @@
 
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="bidVideoPreview">
-                                Select Bid Video
+                                Select Product Video
                             </label>
                             <input accept="video/*" class="form-control border-0 bg-light" id="bidVideoInput"
                                    required type="file" onchange="previewVideo(event)">
                             <div class="invalid-feedback">
                                 video not found!
                             </div>
+
+                        </div>
+
+
+                        <div class="col-md-6 mb-3">
                             <video width="400" controls class="form-control border-0 bg-light" id="bidVideoPreview"
                                    style="margin-top: 10px">
                                 Your browser does not support HTML video.
                             </video>
                         </div>
 
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label" for="productValueInput">
-                                Set Product Value
-                            </label>
-                            <input class="form-control border-0 bg-light" id="productValueInput"
-                                    placeholder="Enter product value"
-                                   name="productValue"
-                                   required type="number">
-                            <div class="invalid-feedback">
-                                Please enter valid product value!
-                            </div>
-                        </div>
+                        <h4 style="font-weight: bold; font-style: italic">Auction details</h4>
 
                         <div class="col-md-6 mb-3">
                             <label class="form-label" for="bidInitialValueInput">
@@ -275,6 +229,62 @@
                             </div>
                         </div>
 
+                        <div class="col-md-6 mb-3"></div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="bidStartsDateTime">
+                                Opening date
+                            </label>
+                            <input class="form-control border-0 bg-light" id="bidStartsDateTime" required
+                                   name="bidStartsDateTime"
+                                   type="date">
+                            <div class="invalid-feedback">
+                                Please enter valid Opening date!
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="bidEndsDate">
+                                Closing date
+                            </label>
+                            <div class="input-group col-lg col-md col-sm-12">
+                                <input class="form-control border-0 bg-light" id="bidEndsDate"
+                                       onchange="updateEndsIn(this)"
+                                       name="bidEndsDate"
+                                       required type="date">
+                                <div class="invalid-feedback">
+                                    Please enter valid Closing date!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="bidStartsDateTime">
+                                Inspection Starts
+                            </label>
+                            <input class="form-control border-0 bg-light" id="bidInspectionStartsDateTime" required
+                                   name="bidInspectionStartsDateTime"
+                                   type="date">
+                            <div class="invalid-feedback">
+                                Please enter valid inspection starts in date time!
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label" for="bidEndsDate">
+                                Inspection Ends
+                            </label>
+                            <div class="input-group col-lg col-md col-sm-12">
+                                <input class="form-control border-0 bg-light" id="bidInspectionEndsDate"
+                                       onchange="updateEndsIn(this)"
+                                       name="bidInspectionEndsDate"
+                                       required type="date">
+                                <div class="invalid-feedback">
+                                    Please enter valid inspection ends in date time!
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="alert alert-warning" role="alert">
                             <span class="fw-bold">Attention!</span>
                             Your bids will automatically run on the website for customers and will notify you after
@@ -286,7 +296,8 @@
                                 <button class="btn btn-dark border-0 me-3 px-5" style="width: fit-content;"
                                         type="submit" id="saveNewBidBtn">Save
                                 </button>
-                                <button class="btn btn-light px-5" style="width: fit-content;" type="submit" id="clearNewBidBtn">Clear
+                                <button class="btn btn-light px-5" style="width: fit-content;" type="submit"
+                                        id="clearNewBidBtn">Clear
                                 </button>
                             </div>
                         </div>

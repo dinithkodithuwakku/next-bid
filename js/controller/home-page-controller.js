@@ -18,7 +18,7 @@ function _createBidCard(bidObj) {
                     <div class="d-flex flex-row justify-content-between mb-3">
                         <div>
                             <p class="mb-0">Ends In</p>
-                            <p class="mb-0 fw-bold">${moment(new Date(bidObj.itemBidding.BidEndDate)).format(format)}</p>
+                            <p class="mb-0 fw-bold">${moment.duration(moment(new Date(bidObj.itemBidding.BidEndDate)).diff(moment(new Date(bidObj.itemBidding.BidStartDate)))).asHours()} hrs</p>
                         </div>
                         <div class="text-end">
                             <p class="mb-0">Starting Bid</p>
@@ -30,6 +30,7 @@ function _createBidCard(bidObj) {
                         style="width: 100%;height: 300px;border-radius: 10px;object-fit: cover;object-position: center;">
 
                     <h5 class="text-center my-3 fw-bold">${bidObj.Item.ItemName}</h5>
+                    <h6 class="text-center my-3 fw-bold">${bidObj.Item.ItemDiscription}</h6>
 
                     <span id=${bidObj.Item.ItemId}></span>
                 </div>
@@ -45,7 +46,7 @@ function createAndAppendBidsList(obj) {
     let placeBidButton = document.createElement('button');
     placeBidButton.className = "btn btn-primary fw-bold w-100 py-3 border-0";
     placeBidButton.style.borderRadius = "10px";
-    placeBidButton.innerHTML = "Place Bid";
+    placeBidButton.innerHTML = "View details";
     placeBidButton.addEventListener('click', function () {
         onclickPlaceBid(obj)
     });
