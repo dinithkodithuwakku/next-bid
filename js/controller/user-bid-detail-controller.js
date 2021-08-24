@@ -2,15 +2,42 @@ $(document).ready(function () {
     if (localStorage.hasOwnProperty("nextbid_bid_obj")) {
         let bidObj = JSON.parse(localStorage.getItem("nextbid_bid_obj"));
 
-        const bidDetailBase = $('#bidDetailBase');
-        bidDetailBase.append(_createBidDetailBase(bidObj));
+        checkUserBids(bidObj);
 
     }
 });
 
-function _createBidDetailBase(bidObj) {
+function checkUserBids(bidObj) {
+    let obj = {
+        ItemId: bidObj.Item.ItemId,
+        UserId: parseInt(localStorage.getItem("nextbid_userId")),
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: "https://localhost:44395/api/User/GetUserBidsByItem",
+        data: obj,
+        async: true,
+        success: function (response) {
+            const bidDetailBase = $('#bidDetailBase');
+            bidDetailBase.append(_createBidDetailBase(bidObj, response));
+        },
+        error: function (response) {
+            // handle error
+            if (response.status === 500) {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Request failed! cannot preform this action!'
+                })
+            }
+        }
+    });
+}
+
+function _createBidDetailBase(bidObj, userBidResponse) {
     const format = "YYYY-MM-DD";
-    console.log(bidObj);
+    let cancelDeadline =  moment(userBidResponse.BidDate).add(1,'hours');
+
     return `
         <div class="col-md-6 col-lg-6">
             <div class="w-100 mb-3">
@@ -32,9 +59,14 @@ function _createBidDetailBase(bidObj) {
                     <h3 class="mb-0 fw-bold">${moment(new Date(bidObj.itemBidding.BidEndDate)).format(format)}</h3>
                 </div>
 
-                <div class="d-flex flex-column mt-2">
-                    <p class="mb-0">Starting Bid</p>
-                    <h3 class="mb-0 fw-bold text-primary">${bidObj.itemBidding.StartingBid}</h3>
+                <div class="d-flex flex-row justify-content-between mt-2">
+                    <div>
+                        <p class="mb-0">Starting Bid</p>
+                        <h3 class="mb-0 fw-bold text-primary">${bidObj.itemBidding.StartingBid}</h3></div>
+                    <div>
+                        <p class="mb-0">highest Bid</p>
+                        <h3 class="mb-0 fw-bold text-primary">${bidObj.itemBidding.HighestBid}</h3>
+                    </div>
                 </div>
             </div>
 
@@ -52,17 +84,14 @@ function _createBidDetailBase(bidObj) {
                                 <!--Please enter valid inspection in date!-->
                             <!--</div>-->
                         <!--</div>-->
-                        <div class="row m-0 p-3 justify-content-center" style="margin-top: 10px">
-                                <input class="form-control border-1 bg-white" type="number" required name="bidValue" value=${parseFloat(bidObj.itemBidding.HighestBid) + 5}>
-                        </div>
-                        <div class="p-3 justify-content-end w-100 align-content-end" style="display: flex">
-                                <button class="btn btn-primary border-0" style="width: fit-content" type="submit" onclick="onClickPlaceBid(event)" id="placeBid"> 
-                                    Place Offer
-                                </button>
-                                <div class="invalid-feedback">
-                                    Please enter bid value!
-                                </div>
-                            </div>
+                        <!--<div class="row m-0 p-3 justify-content-center" style="margin-top: 10px">-->
+                                <!--<input class="form-control border-1 bg-white" type="number" required name="bidValue" value=${parseFloat(bidObj.itemBidding.HighestBid) + 5}>-->
+                        <!--</div>-->
+                        ${userBidResponse && userBidResponse.Id ? 
+                            "<div class=\"row m-0 p-3 justify-content-center\" style=\"margin-top: 10px\"><h4 class='fw-bolder'>You already make an offer to this product</h4><h5>Your offer Rs. <span class='fw-bolder'>"+ userBidResponse.BidValue +"</span>/-</h5></div><div class=\"row m-0 p-3 justify-content-center\" style=\"margin-top: 10px\"><h4 class='fw-normal'>Cancel before: "+ cancelDeadline.format('hh:mm A') +"</h4></div><div class=\"p-3 justify-content-end w-100 align-content-end\" style=\"display: flex\"><button class=\"btn btn-danger border-0\" style=\"width: fit-content\" type=\"submit\" onclick=\"onClickPlaceBid(event)\" id=\"placeBid\">Cancel Offer</button></div>" 
+                            :
+                            "<div class=\"row m-0 p-3 justify-content-center\" style=\"margin-top: 10px\"><input class=\"form-control border-1 bg-white\" type=\"number\" required name=\"bidValue\" value=${parseFloat(bidObj.itemBidding.HighestBid) + 5}> </div><div class=\"p-3 justify-content-end w-100 align-content-end\" style=\"display: flex\"><button class=\"btn btn-primary border-0\" style=\"width: fit-content\" type=\"submit\" onclick=\"onClickPlaceBid(event)\" id=\"placeBid\">Place Offer</button><div class=\"invalid-feedback\">Please enter bid value!</div></div>"
+                        }
                     </div>
                </form>
             </div>
@@ -109,14 +138,14 @@ function onClickPlaceBid(event) {
                 },
                 error: function (response) {
                     // handle error
-                    if(response.status === 500) {
+                    if (response.status === 500) {
                         Toast.fire({
                             icon: 'error',
                             title: 'Request failed! cannot preform this action!'
                         })
                     }
 
-                    if(response.status === 402) {
+                    if (response.status === 402) {
                         Toast.fire({
                             icon: 'error',
                             title: 'Insufficient balance! Please top up your wallet!'
