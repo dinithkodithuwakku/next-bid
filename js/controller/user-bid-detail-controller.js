@@ -7,6 +7,15 @@ $(document).ready(function () {
     }
 });
 
+var userBidDetail;
+
+function checkCancelButtonDeadline() {
+    let cancelDeadline = moment(userBidDetail.BidDate).add(1, 'hours');
+    if (moment().isAfter(cancelDeadline)) {
+        $("#cancelOfferButton").prop("disabled", true);
+    }
+}
+
 function checkUserBids(bidObj) {
     let obj = {
         ItemId: bidObj.Item.ItemId,
@@ -18,15 +27,15 @@ function checkUserBids(bidObj) {
         url: "https://localhost:44395/api/User/GetUserBidsByItem",
         data: obj,
         async: true,
+        complete: function () {
+            setTimeout(checkCancelButtonDeadline(), 60000);
+        },
         success: function (response) {
             const bidDetailBase = $('#bidDetailBase');
             bidDetailBase.append(_createBidDetailBase(bidObj, response));
+            userBidDetail = response;
+            checkCancelButtonDeadline()
 
-
-            let cancelDeadline = moment(response.BidDate).add(1, 'hours');
-            if (moment().isAfter(cancelDeadline)) {
-                $("#cancelOfferButton").prop("disabled", true);
-            }
         },
         error: function (response) {
             // handle error
@@ -232,7 +241,7 @@ function onClickCancelOffer(event) {
         url: "https://localhost:44395/api/Item/GetHighestBid",
         data: obj,
         async: true,
-        complete: function() {
+        complete: function () {
             // Schedule the next request when the current one's complete
             setTimeout(worker, 5000);
         },
