@@ -70,7 +70,9 @@ async function saveNewBid() {
             Image3: image2Base64,
             Video: videoBase64,
 
-            CategoryId: parseInt($('#bidCategoryInput option:selected').val())
+            CategoryId: parseInt($('#bidCategoryInput option:selected').val()),
+
+            UserId: parseInt(localStorage.getItem("nextbid_userId")),
         },
         itemBidding: {
             BidStartDate: $('input[name=bidStartsDateTime]').val(),

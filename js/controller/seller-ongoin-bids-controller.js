@@ -1,14 +1,51 @@
-const bidRow = $('#bidRow');
+const ongoingBidsList = $('#ongoingBidsListId');
 
-function onClickViewDetails(bidObj) {
-    event.preventDefault();
 
-    localStorage.setItem("nextbid_bid_obj", JSON.stringify(bidObj));
+function _loadTrendingBids() {
 
-    window.location.href = baseUrl + 'user-bid-detail.html';
+    let itemObj = {
+        UserId: parseInt(localStorage.getItem("nextbid_userId")),
+    };
+    $.ajax({
+        type: 'POST',
+        url: "https://localhost:44395/api/Item/GetItemListByUserId",
+        data: itemObj,
+        async: true,
+        beforeSend: function () {
+            // show loading
+
+        },
+        complete: function () {
+            // hide loading
+
+        },
+        success: function (response) {
+            // handle success
+            ongoingBidsList.empty();
+            for (let i = 0; i < response.Item.length; i++) {
+                let item = response.Item[i];
+                let itemBidding = response.itemBidding[i];
+                let bidObj = {
+                    Item: item,
+                    itemBidding: itemBidding
+                };
+                createAndAppendBidsList(bidObj);
+            }
+        },
+        error: function (response) {
+
+        }
+    });
 }
 
+$(document).ready(function () {
+    _loadTrendingBids();
+});
+
+
+
 function _createBidCard(bidObj) {
+    console.log(bidObj);
     const format = "YYYY-MM-DD";
 
     return `
@@ -41,51 +78,23 @@ function _createBidCard(bidObj) {
 
 function createAndAppendBidsList(obj) {
 
-    bidRow.append(_createBidCard(obj));
+    ongoingBidsList.append(_createBidCard(obj));
 
     let placeBidButton = document.createElement('button');
     placeBidButton.className = "btn btn-primary fw-bold w-100 py-3 border-0";
     placeBidButton.style.borderRadius = "10px";
     placeBidButton.innerHTML = "View details";
     placeBidButton.addEventListener('click', function () {
-        onClickViewDetails(obj)
+        onclickPlaceBid(obj)
     });
 
     document.getElementById(obj.Item.ItemId).appendChild(placeBidButton);
 }
 
-function _loadTrendingBids() {
-    $.ajax({
-        type: 'GET',
-        url: "https://localhost:44395/api/Item/GetItemList",
-        async: true,
-        beforeSend: function () {
-            // show loading
+function onclickPlaceBid(bidObj) {
+    event.preventDefault();
 
-        },
-        complete: function () {
-            // hide loading
+    localStorage.setItem("nextbid_bid_obj", JSON.stringify(bidObj));
 
-        },
-        success: function (response) {
-            // handle success
-            bidRow.empty();
-            for (let i = 0; i < response.Item.length; i++) {
-                let item = response.Item[i];
-                let itemBidding = response.itemBidding[i];
-                let bidObj = {
-                    Item: item,
-                    itemBidding: itemBidding
-                };
-                createAndAppendBidsList(bidObj);
-            }
-        },
-        error: function (response) {
-
-        }
-    });
+    window.location.href = baseUrl + 'seller-ongoin-bids-view.html';
 }
-
-$(document).ready(function () {
-    _loadTrendingBids();
-});

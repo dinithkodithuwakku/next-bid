@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>N E X T BID - Profile(seller)</title>
+    <title>N E X T BID - Bid Detail</title>
 
     <!-- bootstrap 5.0 styles -->
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -89,12 +89,15 @@
 
 <main>
     <section style="padding: 5rem">
-        <div class="container">
-            <div class="d-flex flex-row align-items-center mb-3">
-                <h3 class="mb-0">Bid List - <span class="text-primary">Ongoing</span></h3>
-            </div>
+        <div class="container" >
 
-            <div class="row" id="ongoingBidsListId">
+            <nav class="breadcrumb bg-transparent p-0">
+                <a class="breadcrumb-item" href="#">Bids 🔥</a>
+                <span class="breadcrumb-item active" id="breadCrumbTitle">Bid Name Here</span>
+            </nav>
+
+            <div class="row" id="bidDetailBase">
+
 
             </div>
         </div>
@@ -185,7 +188,8 @@
 <script src="js/controller/header-controller.js" type="module"></script>
 
 <script src="js/controller/auth-controller.js"></script>
-<script src="js/controller/seller-ongoin-bids-controller.js"></script>
+
+<script src="js/controller/seller-ongoin-bids-view-controller.js"></script>
 
 </body>
 </html>
