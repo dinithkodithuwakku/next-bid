@@ -1,4 +1,4 @@
-const ongoingBidsList = $('#ongoingBidsListId');
+const completedBidsList = $('#bidCompletedListsId');
 
 
 function _loadTrendingBids() {
@@ -21,9 +21,12 @@ function _loadTrendingBids() {
         },
         success: function (response) {
             // handle success
-            ongoingBidsList.empty();
+            completedBidsList.empty();
             for (let i = 0; i < response.Item.length; i++) {
-                if (!moment().isAfter(moment(response.itemBidding[i].BidEndDate))) {
+                console.log(moment(response.itemBidding[i].BidEndDate));
+                console.log(moment().isAfter(moment(response.itemBidding[i].BidEndDate)))
+                if (moment().isAfter(moment(response.itemBidding[i].BidEndDate))) {
+                    console.log("asdasd");
                     let item = response.Item[i];
                     let itemBidding = response.itemBidding[i];
                     let bidObj = {
@@ -44,6 +47,28 @@ $(document).ready(function () {
     _loadTrendingBids();
 });
 
+function createAndAppendBidsList(obj) {
+
+    completedBidsList.append(_createBidCard(obj));
+
+    let placeBidButton = document.createElement('button');
+    placeBidButton.className = "btn btn-primary fw-bold w-100 py-3 border-0";
+    placeBidButton.style.borderRadius = "10px";
+    placeBidButton.innerHTML = "View users";
+    placeBidButton.addEventListener('click', function () {
+        onClickViewUsers(obj)
+    });
+
+    document.getElementById(obj.Item.ItemId).appendChild(placeBidButton);
+}
+
+function onClickViewUsers(bidObj) {
+    event.preventDefault();
+
+    localStorage.setItem("nextbid_bid_obj", JSON.stringify(bidObj));
+
+    window.location.href = baseUrl + 'seller-bid-history-view.html';
+}
 
 function _createBidCard(bidObj) {
     console.log(bidObj);
@@ -55,12 +80,12 @@ function _createBidCard(bidObj) {
                 <div class="card-body p-3">
                     <div class="d-flex flex-row justify-content-between mb-3">
                         <div>
-                            <p class="mb-0">Ends In</p>
-                            <p class="mb-0 fw-bold">${parseInt(moment().diff(moment(bidObj.itemBidding.BidEndDate), 'hours', true))} hrs</p>
+                            <p class="mb-0">Ended</p>
+                            <p class="mb-0 fw-bold">${parseInt(moment().diff(moment(bidObj.itemBidding.BidEndDate),'hours', true))} hrs ago</p>
                         </div>
                         <div class="text-end">
-                            <p class="mb-0">Starting Bid</p>
-                            <p class="mb-0 fw-bold">${bidObj.itemBidding.StartingBid}</p>
+                            <p class="mb-0">Highest Bid</p>
+                            <p class="mb-0 fw-bold">${bidObj.itemBidding.HighestBid}</p>
                         </div>
                     </div>
 
@@ -75,27 +100,4 @@ function _createBidCard(bidObj) {
             </div>
         </div>
     `;
-}
-
-function createAndAppendBidsList(obj) {
-
-    ongoingBidsList.append(_createBidCard(obj));
-
-    let placeBidButton = document.createElement('button');
-    placeBidButton.className = "btn btn-primary fw-bold w-100 py-3 border-0";
-    placeBidButton.style.borderRadius = "10px";
-    placeBidButton.innerHTML = "View details";
-    placeBidButton.addEventListener('click', function () {
-        onclickPlaceBid(obj)
-    });
-
-    document.getElementById(obj.Item.ItemId).appendChild(placeBidButton);
-}
-
-function onclickPlaceBid(bidObj) {
-    event.preventDefault();
-
-    localStorage.setItem("nextbid_bid_obj", JSON.stringify(bidObj));
-
-    window.location.href = baseUrl + 'seller-ongoin-bids-view.html';
 }
