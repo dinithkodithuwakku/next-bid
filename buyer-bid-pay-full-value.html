@@ -91,7 +91,7 @@
     <section style="padding: 5rem">
         <div class="container">
             <div class="d-flex flex-row align-items-center mb-3">
-                <h3 class="mb-0">Pay full value</h3>
+                <!--<h3 class="mb-0">Pay</h3>-->
             </div>
 
             <div id="payBidWrapper" class="row">
@@ -136,11 +136,11 @@
                                                     </label>
                                                     <div class="input-group">
                                                         <input type="number" placeholder="MM"
-                                                               name="" class="form-control"
+                                                               name="mm" class="form-control"
                                                                required maxlength="2" minlength="2">
                                                         <input type="number"
                                                                placeholder="YY"
-                                                               name=""
+                                                               name="yy"
                                                                class="form-control"
                                                                required maxlength="2" minlength="2">
                                                     </div>
@@ -168,7 +168,10 @@
                                                     <h6 style="font-weight: bold">Total Fee</h6>
                                                 </label>
                                                 <label style="margin-left: 20px">
-                                                    <h6 style="font-weight: bolder; font-style: italic">Rs. 650 /-</h6>
+                                                    <h6 style="font-weight: bolder; font-style: italic">Rs. <span
+                                                            style="font-weight: bolder; font-style: italic"
+                                                            id="totalFeeId">-</span> /-
+                                                    </h6>
                                                 </label>
                                             </div>
                                         </div>

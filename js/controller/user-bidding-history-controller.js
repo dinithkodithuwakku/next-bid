@@ -17,7 +17,7 @@ function _createBidCard(bidObj) {
                             ${bidObj.Item.ItemName}</h5>
 
                         <p class="mb-0">Bid Ended</p>
-                        <p class="fw-bold">${parseInt(moment().diff(moment(bidObj.itemBidding.BidEndDate),'hours', true))} hrs ago</p>
+                        <p class="fw-bold">${parseInt(moment().diff(moment(bidObj.itemBidding.BidEndDate), 'hours', true))} hrs ago</p>
 
                         <p class="mb-0">Highest Bid <span class="badge bg-dark">Yours</span></p>
                         <p class="fw-bold">${bidObj.itemBidding.HighestBid}</p>
@@ -33,23 +33,63 @@ function _createBidCard(bidObj) {
     `;
 }
 
-function onClickPayNow(event){
-    console.log('asdasd');
+function checkUserBids(bidObj) {
+
+    let obj = {
+        ItemId: bidObj.Item.ItemId,
+        UserId: parseInt(localStorage.getItem("nextbid_userId")),
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: "https://localhost:44395/api/User/GetUserBidsByItem",
+        data: obj,
+        async: true,
+        complete: function () {
+            // setTimeout(checkCancelButtonDeadline(), 60000);
+        },
+        success: function (response) {
+
+            let placeBidButton = document.createElement('button');
+            placeBidButton.className = "btn btn-primary fw-bold w-100 py-3 border-0";
+            placeBidButton.style.borderRadius = "10px";
+
+            if (parseFloat(bidObj.itemBidding.HighestBid) === parseFloat(response.ReserveAmount)) {
+                placeBidButton.innerHTML = "Paid";
+                placeBidButton.setAttribute('disabled', true);
+            } else {
+                placeBidButton.innerHTML = "Pay now";
+            }
+            placeBidButton.addEventListener('click', function () {
+                onClickPayNow()
+            });
+
+            document.getElementById(bidObj.Item.ItemId).appendChild(placeBidButton);
+
+            localStorage.setItem("nextbid_bid_obj", JSON.stringify(bidObj));
+            localStorage.setItem("nextbid_pay_user_obj", JSON.stringify(response));
+
+        },
+        error: function (response) {
+            // handle error
+            if (response.status === 500) {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Request failed! cannot preform this action!'
+                })
+            }
+        }
+    });
+}
+
+function onClickPayNow() {
+    window.location.href = baseUrl + 'buyer-bid-pay-full-value.html';
 }
 
 function createAndAppendBidsList(obj) {
 
     bidRow.append(_createBidCard(obj));
-
-    let placeBidButton = document.createElement('button');
-    placeBidButton.className = "btn btn-primary fw-bold w-100 py-3 border-0";
-    placeBidButton.style.borderRadius = "10px";
-    placeBidButton.innerHTML = "Pay now";
-    placeBidButton.addEventListener('click', function () {
-        onClickPayNow(obj)
-    });
-
-    document.getElementById(obj.Item.ItemId).appendChild(placeBidButton);
+    checkUserBids(obj);
 }
 
 function _loadTrendingBids() {
@@ -57,7 +97,7 @@ function _loadTrendingBids() {
         type: 'POST',
         url: "https://localhost:44395/api/Item/GetItemListByUserBidded",
         async: true,
-        data:{
+        data: {
             UserId: parseInt(localStorage.getItem("nextbid_userId")),
         },
         beforeSend: function () {

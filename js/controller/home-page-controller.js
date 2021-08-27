@@ -71,13 +71,15 @@ function _loadTrendingBids() {
             // handle success
             bidRow.empty();
             for (let i = 0; i < response.Item.length; i++) {
-                let item = response.Item[i];
-                let itemBidding = response.itemBidding[i];
-                let bidObj = {
-                    Item: item,
-                    itemBidding: itemBidding
-                };
-                createAndAppendBidsList(bidObj);
+                if (!moment().isAfter(moment(response.itemBidding[i].BidEndDate))) {
+                    let item = response.Item[i];
+                    let itemBidding = response.itemBidding[i];
+                    let bidObj = {
+                        Item: item,
+                        itemBidding: itemBidding
+                    };
+                    createAndAppendBidsList(bidObj);
+                }
             }
         },
         error: function (response) {
