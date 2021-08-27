@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d08bab06-587a-4ecd-bcb6-2d8abe49b1c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin-product-ready-to-dispatch.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/controller/admin-product-ready-to-dispatch-controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-bid-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-bid-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-bid-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-bid-create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-bid-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-bid-view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-category-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-category-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-customer-all-blacklisted-users.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-customer-all-blacklisted-users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-customer-all-buyers.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-customer-all-buyers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-customer-all-pending-buyers.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-customer-all-pending-buyers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-customer-all-pending-sellers.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-customer-all-pending-sellers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-customer-all-sellers.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-customer-all-sellers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-customer-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-customer-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-customer-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-customer-view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-product-ready-to-dispatch.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin-product-ready-to-dispatch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controller/admin-product-ready-to-dispatch-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/controller/admin-product-ready-to-dispatch-controller.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,11 +16,12 @@
     <session id="2098507717">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="18" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="1" />
@@ -43,13 +32,13 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="135" />
-          <entry key="js" value="135" />
+          <entry key="html" value="136" />
+          <entry key="js" value="139" />
           <entry key="json" value="2" />
           <entry key="rnc" value="1" />
           <entry key="scss" value="1" />
@@ -58,9 +47,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="135" />
+          <entry key="HTML" value="136" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="135" />
+          <entry key="JavaScript" value="139" />
           <entry key="RNG Compact" value="1" />
           <entry key="SCSS" value="1" />
           <entry key="TypeScript" value="1" />
@@ -68,14 +57,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="2232" />
-          <entry key="js" value="6586" />
+          <entry key="html" value="2390" />
+          <entry key="js" value="6828" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2294" />
-          <entry key="JavaScript" value="6524" />
+          <entry key="HTML" value="2453" />
+          <entry key="JavaScript" value="6765" />
         </counts>
       </usages-collector>
     </session>
@@ -85,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin-product-ready-to-dispatch.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="101" column="120" selection-start-line="101" selection-start-column="93" selection-end-line="101" selection-end-column="120" />
+            <state relative-caret-position="317">
+              <caret line="132" column="64" selection-start-line="132" selection-start-column="45" selection-end-line="132" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -94,17 +83,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller/admin-product-ready-to-dispatch-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="18" column="66" lean-forward="true" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
+            <state relative-caret-position="283">
+              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/controller/admin-customer-all-buyers-controller.js">
+        <entry file="file://$PROJECT_DIR$/js/controller/seller-new-bid-controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="119" column="7" lean-forward="true" selection-start-line="87" selection-start-column="3" selection-end-line="119" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controller/user-bid-detail-controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="22" selection-end-column="1" />
+              <caret line="2" column="73" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -184,8 +182,8 @@
         <option value="$PROJECT_DIR$/admin-customer-list.html" />
         <option value="$PROJECT_DIR$/admin-customer-view.html" />
         <option value="$PROJECT_DIR$/admin-dashboard.html" />
-        <option value="$PROJECT_DIR$/admin-product-ready-to-dispatch.html" />
         <option value="$PROJECT_DIR$/js/controller/admin-customer-all-buyers-controller.js" />
+        <option value="$PROJECT_DIR$/admin-product-ready-to-dispatch.html" />
         <option value="$PROJECT_DIR$/js/controller/admin-product-ready-to-dispatch-controller.js" />
       </list>
     </option>
@@ -198,7 +196,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-75" />
-    <option name="width" value="1904" />
+    <option name="width" value="1905" />
     <option name="height" value="1100" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -209,8 +207,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,7 +238,7 @@
     <property name="SearchEverywhereHistoryKey" value="menuItemSellerBidsHistory&#9;null&#9;null&#10;password&#9;null&#9;null&#10;passw&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1630074441698" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1630074468577" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -308,18 +306,19 @@
       <workItem from="1629955180118" duration="5945000" />
       <workItem from="1629987424776" duration="4028000" />
       <workItem from="1630042325630" duration="8176000" />
-      <workItem from="1630070228444" duration="4143000" />
+      <workItem from="1630070228444" duration="4262000" />
+      <workItem from="1630081957773" duration="3241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115102000" />
+    <option name="totallyTimeSpent" value="118462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25167784" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25503355" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -461,13 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/seller-new-bid-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="74" column="18" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user-bid-detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -486,13 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="65" column="24" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller-add-new-bid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="67" column="88" selection-start-line="67" selection-start-column="88" selection-end-line="67" selection-end-column="88" />
         </state>
       </provider>
     </entry>
@@ -559,13 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/user-bid-detail-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="73" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buyer-bid-pay-full-value.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2397">
@@ -577,13 +555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3196">
           <caret line="188" column="46" selection-start-line="188" selection-start-column="46" selection-end-line="188" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/home-page-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" column="17" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -626,10 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -637,10 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="11" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#video#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,10 +691,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin-product-ready-to-dispatch.html">
+    <entry file="file://$PROJECT_DIR$/seller-add-new-bid.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="101" column="120" selection-start-line="101" selection-start-column="93" selection-end-line="101" selection-end-column="120" />
+        <state relative-caret-position="257">
+          <caret line="108" column="47" lean-forward="true" selection-start-line="104" selection-start-column="28" selection-end-line="108" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -742,10 +705,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/home-page-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1037">
+          <caret line="5" column="68" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/user-bid-detail-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="73" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin-product-ready-to-dispatch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="132" column="64" selection-start-line="132" selection-start-column="45" selection-end-line="132" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/seller-new-bid-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="119" column="7" lean-forward="true" selection-start-line="87" selection-start-column="3" selection-end-line="119" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/admin-product-ready-to-dispatch-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="18" column="66" lean-forward="true" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
+        <state relative-caret-position="283">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
     </entry>

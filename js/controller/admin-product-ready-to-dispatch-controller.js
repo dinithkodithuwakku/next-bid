@@ -21,8 +21,12 @@ function loadReadyToDispatchProducts() {
                 let dispatchButton = document.createElement('button');
                 dispatchButton.className = "btn btn-sm btn-primary border-0";
                 dispatchButton.innerHTML = "Dispatch";
-                dispatchButton.addEventListener('click', function () {
 
+                dispatchButton.setAttribute("data-bs-toggle", "modal");
+                dispatchButton.setAttribute("data-bs-target", "#courierCharagesModal");
+
+                dispatchButton.addEventListener('click', function () {
+                    localStorage.setItem("nextbid_dispatch_obj", JSON.stringify(product));
                 });
 
                 document.getElementById(product.Item.ItemId).appendChild(dispatchButton);
@@ -56,6 +60,7 @@ function _createProductTableRow(product) {
                    <!--title="View Details">-->
                     <!--View-->
                 <!--</a>-->
+                
                  <span id=${product.Item.ItemId}></span>
             </td>
         </tr>
@@ -65,3 +70,38 @@ function _createProductTableRow(product) {
 $(document).ready(function () {
     loadReadyToDispatchProducts();
 });
+
+function saveDispatchOrder(event) {
+    event.preventDefault();
+    let dispatchObj = JSON.parse(localStorage.getItem("nextbid_dispatch_obj"));
+
+    let obj = {
+        ItemId: dispatchObj.Item.ItemId,
+        Address: dispatchObj.User.Address + " " + dispatchObj.User.City,
+        DeliveryCost: parseFloat($('input[name=courierChargesInput]').val())
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: "https://localhost:44395/api/OrderDetail/SaveDispatch",
+        data: obj,
+        async: true,
+        success: function (response) {
+            // handle success
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Order Dispatched!'
+            });
+
+            window.location.href = baseUrl + 'admin-product-ready-to-dispatch.html';
+        },
+        error: function (response) {
+            // handle error
+            Toast.fire({
+                icon: 'error',
+                title: 'Request failed! cannot preform this action!'
+            })
+        }
+    });
+}
