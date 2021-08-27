@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
     <meta content="" name="description"/>
     <meta content="" name="author"/>
-    <title>N E X T Bid - Dashboard</title>
+    <title>N E X T Bid - Customers List</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
     <link href="admin-assets/css/styles.css" rel="stylesheet"/>
 
@@ -48,17 +48,6 @@
                         Dashboard
                     </a>
 
-
-                    <!--<div class="sb-sidenav-menu-heading">Bids</div>-->
-                    <!--<a class="nav-link" href="admin-bid-create.html" id="menuItemBidCreate">-->
-                        <!--<div class="sb-nav-link-icon"><i class="fas fa-file"></i></div>-->
-                        <!--Create Bid-->
-                    <!--</a>-->
-                    <!--<a class="nav-link" href="admin-bid-all.html" id="menuItemBidAll">-->
-                        <!--<div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>-->
-                        <!--View All-->
-                    <!--</a>-->
-
                     <div class="sb-sidenav-menu-heading">Category</div>
                     <a class="nav-link" href="admin-category-all.html" id="menuItemCategoryAll">
                         <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
@@ -76,7 +65,8 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
                         View All
                     </a>
-                    <a class="nav-link" href="admin-customer-all-pending-buyers.html" id="menuItemCustomerAllPendingBuyers">
+                    <a class="nav-link" href="admin-customer-all-pending-buyers.html"
+                       id="menuItemCustomerAllPendingBuyers">
                         <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
                         View Pending buyers
                     </a>
@@ -85,7 +75,8 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
                         View Pending sellers
                     </a>
-                    <a class="nav-link" href="admin-customer-all-blacklisted-users.html" id="menuItemCustomerAllBlacklistedUsers">
+                    <a class="nav-link" href="admin-customer-all-blacklisted-users.html"
+                       id="menuItemCustomerAllBlacklistedUsers">
                         <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
                         View Blacklisted users
                     </a>
@@ -104,80 +95,27 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h4 class="mt-4">Ongoing Bids &#9203;</h4>
 
+                <h4 class="mt-4">Ready to Dispatch products</h4>
                 <hr>
 
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 col-sm-12 mb-3">
-                        <div class="card" style="border-radius: 10px">
-                            <div class="card-body p-3">
-                                <div class="d-flex flex-row justify-content-between mb-3">
-                                    <div>
-                                        <p class="mb-0">Ends In</p>
-                                        <p class="mb-0 fw-bold">08/05 - 21h 23m 03s</p>
-                                    </div>
-                                    <div class="text-end">
-                                        <p class="mb-0">Highest Bid</p>
-                                        <p class="mb-0 fw-bold">550.00 LKR</p>
-                                    </div>
-                                </div>
+                <table class="table table-hover table-responsive-md table-responsive-sm" id="productReadyToDispatchTable">
+                    <thead>
+                    <tr>
+                        <th scope="col">Item ID</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Highest Bid</th>
+                        <th scope="col">Buyer Name</th>
+                        <th scope="col">Buyer Mobile Number</th>
+                        <th scope="col">Buyer Address</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-                                <img alt="bid-image" src="https://via.placeholder.com/300"
-                                     style="width: 100%;height: 300px;border-radius: 10px;object-fit: cover;object-position: center;">
-
-                                <h5 class="text-center my-3 fw-bold">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit.</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 col-sm-12 mb-3">
-                        <div class="card" style="border-radius: 10px">
-                            <div class="card-body p-3">
-                                <div class="d-flex flex-row justify-content-between mb-3">
-                                    <div>
-                                        <p class="mb-0">Ends In</p>
-                                        <p class="mb-0 fw-bold">08/05 - 21h 23m 03s</p>
-                                    </div>
-                                    <div class="text-end">
-                                        <p class="mb-0">Highest Bid</p>
-                                        <p class="mb-0 fw-bold">550.00 LKR</p>
-                                    </div>
-                                </div>
-
-                                <img alt="bid-image" src="https://via.placeholder.com/300"
-                                     style="width: 100%;height: 300px;border-radius: 10px;object-fit: cover;object-position: center;">
-
-                                <h5 class="text-center my-3 fw-bold">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit.</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 col-sm-12 mb-3">
-                        <div class="card" style="border-radius: 10px">
-                            <div class="card-body p-3">
-                                <div class="d-flex flex-row justify-content-between mb-3">
-                                    <div>
-                                        <p class="mb-0">Ends In</p>
-                                        <p class="mb-0 fw-bold">08/05 - 21h 23m 03s</p>
-                                    </div>
-                                    <div class="text-end">
-                                        <p class="mb-0">Highest Bid</p>
-                                        <p class="mb-0 fw-bold">550.00 LKR</p>
-                                    </div>
-                                </div>
-
-                                <img alt="bid-image" src="https://via.placeholder.com/300"
-                                     style="width: 100%;height: 300px;border-radius: 10px;object-fit: cover;object-position: center;">
-
-                                <h5 class="text-center my-3 fw-bold">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit.</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </tbody>
+                </table>
 
             </div>
         </main>
@@ -205,9 +143,20 @@
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"></script>
 <script src="admin-assets/js/datatables-simple-demo.js"></script>
-
+<script src="js/moment.min.js"></script>
 <script src="js/controller/base_controller.js"></script>
 <script src="js/controller/admin-auth-controller.js"></script>
 <script src="js/controller/admin-left-navigation-controller.js"></script>
+<script src="js/controller/admin-product-ready-to-dispatch-controller.js"></script>
+
+<script>
+    $(document).ready(function () {
+        const datatablesSimple = document.getElementById('customerListTable');
+        if (datatablesSimple) {
+            new simpleDatatables.DataTable(datatablesSimple);
+        }
+    });
+</script>
+
 </body>
 </html>
