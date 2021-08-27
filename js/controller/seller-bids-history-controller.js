@@ -66,6 +66,7 @@ function onClickViewUsers(bidObj) {
     event.preventDefault();
 
     localStorage.setItem("nextbid_bid_obj", JSON.stringify(bidObj));
+    console.log(bidObj);
 
     window.location.href = baseUrl + 'seller-bid-history-view.html';
 }

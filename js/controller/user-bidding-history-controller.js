@@ -50,24 +50,27 @@ function checkUserBids(bidObj) {
         },
         success: function (response) {
 
-            let placeBidButton = document.createElement('button');
-            placeBidButton.className = "btn btn-primary fw-bold w-100 py-3 border-0";
-            placeBidButton.style.borderRadius = "10px";
+            if (parseFloat(bidObj.itemBidding.HighestBid) === parseFloat(response.BidValue)) {
+                let placeBidButton = document.createElement('button');
+                placeBidButton.className = "btn btn-primary fw-bold w-100 py-3 border-0";
+                placeBidButton.style.borderRadius = "10px";
 
-            if (parseFloat(bidObj.itemBidding.HighestBid) === parseFloat(response.ReserveAmount)) {
-                placeBidButton.innerHTML = "Paid";
-                placeBidButton.setAttribute('disabled', true);
-            } else {
-                placeBidButton.innerHTML = "Pay now";
+                if (parseFloat(bidObj.itemBidding.HighestBid) === parseFloat(response.ReserveAmount)) {
+                    placeBidButton.innerHTML = "Paid";
+                    placeBidButton.setAttribute('disabled', true);
+                } else {
+                    placeBidButton.innerHTML = "Pay now";
+                }
+                placeBidButton.addEventListener('click', function () {
+                    onClickPayNow()
+                });
+
+                document.getElementById(bidObj.Item.ItemId).appendChild(placeBidButton);
+
+                localStorage.setItem("nextbid_bid_obj", JSON.stringify(bidObj));
+                localStorage.setItem("nextbid_pay_user_obj", JSON.stringify(response));
             }
-            placeBidButton.addEventListener('click', function () {
-                onClickPayNow()
-            });
 
-            document.getElementById(bidObj.Item.ItemId).appendChild(placeBidButton);
-
-            localStorage.setItem("nextbid_bid_obj", JSON.stringify(bidObj));
-            localStorage.setItem("nextbid_pay_user_obj", JSON.stringify(response));
 
         },
         error: function (response) {

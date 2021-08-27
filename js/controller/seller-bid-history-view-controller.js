@@ -13,7 +13,7 @@ $(document).ready(function () {
 
         console.log(moment(moment(bidObj.itemBidding.BidEndDate).add(1, 'days')));
 
-        if (moment(moment(bidObj.itemBidding.BidEndDate).add(1, 'days')).isAfter(moment()))
+        if (bidObj.Item.IsSold || moment(moment(bidObj.itemBidding.BidEndDate).add(1, 'days')).isAfter(moment()))
             transferToOtherUserButton.setAttribute("disabled", true);
 
         transferToOtherUserButton.addEventListener('click', function () {
@@ -127,7 +127,10 @@ function _createBidDetailBase(bidObj) {
             response.forEach(function (userBid) {
                 $('#bidsUsersListId').append(
                     `
-                <button type="button" class="list-group-item list-group-item-action">${userBid.user.FirstName} ${userBid.user.LastName} - Rs. ${userBid.userBiddingDetails.BidValue} /- <br> Total paid Rs. ${userBid.userBiddingDetails.ReserveAmount} /-</button>
+                <div class="row">
+                    <button type="button" class="list-group-item list-group-item-action">${userBid.user.FirstName} ${userBid.user.LastName} - Rs. ${userBid.userBiddingDetails.BidValue} /- <br> Total paid Rs. ${userBid.userBiddingDetails.ReserveAmount} /- <span class="badge bg-primary">${bidObj.Item.IsSold ? "Sold" : "Ready to dispatch"}</span></button>
+                    ${!bidObj.Item.IsSold && (parseFloat(userBid.userBiddingDetails.ReserveAmount) === parseFloat(bidObj.itemBidding.HighestBid)) ? "<button type=\"button\" class=\"btn btn-primary\" onclick='onClickReadytoDispatch(event)'>Ready to dispatch</button>" : ""}
+                </div>
                 `
                 );
             });
@@ -145,3 +148,34 @@ function _createBidDetailBase(bidObj) {
     });
 })();
 
+function onClickReadytoDispatch(event){
+    let bidObj = JSON.parse(localStorage.getItem("nextbid_bid_obj"));
+
+    let obj = {
+        ItemId: bidObj.Item.ItemId,
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: "https://localhost:44395/api/Item/ReadyToDispatch",
+        data: obj,
+        async: true,
+        success: function (response) {
+            Toast.fire({
+                icon: 'success',
+                title: 'Product is dispatched!'
+            });
+            localStorage.removeItem("nextbid_bid_obj")
+            window.location.href = baseUrl + 'seller-bids-history.html';
+        },
+        error: function (response) {
+            // handle error
+            if (response.status === 500) {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Request failed! cannot preform this action!'
+                })
+            }
+        }
+    });
+}
