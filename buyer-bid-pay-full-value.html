@@ -91,11 +91,99 @@
     <section style="padding: 5rem">
         <div class="container">
             <div class="d-flex flex-row align-items-center mb-3">
-                <h3 class="mb-0">My Bids - Wins</h3>
+                <h3 class="mb-0">Pay full value</h3>
             </div>
 
-            <div id="bidWinWrapper" class="row">
+            <div id="payBidWrapper" class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="card ">
+                        <div class="card-header">
 
+                            <!-- Credit card form content -->
+                            <div class="tab-content">
+                                <!-- credit card info-->
+                                <div id="credit-card" class="tab-pane fade show active pt-3">
+                                    <form role="form" id="user_registration_payment_form" class="needs-validation">
+                                        <div class="form-group m-3">
+                                            <label for="username">
+                                                <h6>Card Owner</h6>
+                                            </label>
+                                            <input type="text" id="username" placeholder="* * * ******"
+                                                   required class="form-control">
+                                            <div class="invalid-feedback">
+                                                Please enter valid card owner name!.
+                                            </div>
+                                        </div>
+                                        <div class="form-group m-3">
+                                            <label for="cardNumber">
+                                                <h6>Card number</h6>
+                                            </label>
+                                            <div class="input-group">
+                                                <input type="text" id="cardNumber" placeholder="**** **** **** ****"
+                                                       class="form-control" required maxlength="16" minlength="16"
+                                                       pattern="^[0-9]*$">
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Please enter valid card number!.
+                                            </div>
+                                        </div>
+                                        <div class="row  m-2">
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label><span class="hidden-xs">
+                                                    <h6>Expiration Date</h6>
+                                                </span>
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <input type="number" placeholder="MM"
+                                                               name="" class="form-control"
+                                                               required maxlength="2" minlength="2">
+                                                        <input type="number"
+                                                               placeholder="YY"
+                                                               name=""
+                                                               class="form-control"
+                                                               required maxlength="2" minlength="2">
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        Please enter valid expiration date!.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group mb-4">
+                                                    <label data-toggle="tooltip"
+                                                           title="Three digit CV code on the back of your card">
+                                                        <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                                    </label>
+                                                    <input type="text" required class="form-control" placeholder="***"
+                                                           maxlength="3" minlength="3">
+                                                    <div class="invalid-feedback">
+                                                        Please enter valid CVV!.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div style="display: flex; flex-direction: row; justify-content: flex-end">
+                                                <label>
+                                                    <h6 style="font-weight: bold">Total Fee</h6>
+                                                </label>
+                                                <label style="margin-left: 20px">
+                                                    <h6 style="font-weight: bolder; font-style: italic">Rs. 650 /-</h6>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="float-end">
+                                            <button class="btn btn-primary border-0 me-2 "
+                                                    type="submit"> Confirm Payment
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- End -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -186,6 +274,6 @@
 
 <script src="js/controller/auth-controller.js"></script>
 
-<script src="js/controller/user-bidding-history-controller.js"></script>
+<script src="js/controller/buyer-bid-pay-full-value-controller.js"></script>
 </body>
 </html>

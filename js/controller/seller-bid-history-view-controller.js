@@ -5,7 +5,23 @@ $(document).ready(function () {
         const bidDetailBase = $('#bidDetailBase');
         bidDetailBase.append(_createBidDetailBase(bidObj));
 
-        loadBidsUsersList();
+        let transferToOtherUserButton = document.createElement('button');
+        transferToOtherUserButton.className = "btn btn-primary fw-bold  py-3 border-0";
+        transferToOtherUserButton.style.borderRadius = "10px";
+        transferToOtherUserButton.style.width = "20%";
+        transferToOtherUserButton.innerHTML = "Transfer";
+
+        console.log(moment(moment(bidObj.itemBidding.BidEndDate).add(1, 'days')));
+
+        if (moment(moment(bidObj.itemBidding.BidEndDate).add(1, 'days')).isAfter(moment()))
+            transferToOtherUserButton.setAttribute("disabled", true);
+
+        transferToOtherUserButton.addEventListener('click', function () {
+            // onClickViewDetails(obj)
+        });
+
+        document.getElementById(bidObj.Item.ItemId).appendChild(transferToOtherUserButton);
+
     }
 });
 
@@ -51,6 +67,10 @@ function _createBidDetailBase(bidObj) {
                         
                     </div>
                </form>
+            </div>
+            
+            <div class="row align-items-end justify-content-end" id="${bidObj.Item.ItemId}">
+            
             </div>
             
             <div class="row">
